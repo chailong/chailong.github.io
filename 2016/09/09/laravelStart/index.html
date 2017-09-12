@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="git,Laravel,phpstome,oh my zsh," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Laravel 安装1.下载composer 官网2.mv composer.pr /usr/local/bin/composr3.laravel new blog 或 composer create-project --prefer-dist laravel/laracel Laravel54.使用 php artisna serve 来启动 laravel 框架">
+<meta name="keywords" content="git,Laravel,phpstome,oh my zsh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel 从零开始">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/laravelStart/index.html">
+<meta property="og:site_name" content="韩月">
+<meta property="og:description" content="Laravel 安装1.下载composer 官网2.mv composer.pr /usr/local/bin/composr3.laravel new blog 或 composer create-project --prefer-dist laravel/laracel Laravel54.使用 php artisna serve 来启动 laravel 框架">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-12T16:46:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Laravel 从零开始">
+<meta name="twitter:description" content="Laravel 安装1.下载composer 官网2.mv composer.pr /usr/local/bin/composr3.laravel new blog 或 composer create-project --prefer-dist laravel/laracel Laravel54.使用 php artisna serve 来启动 laravel 框架">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/09/laravelStart/"/>
+
+
+
+
+
+  <title>Laravel 从零开始 | 韩月</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ef0b67dc65dc2c144e5ac3602cb22140";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">韩月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/09/laravelStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="韩月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Laravel 从零开始</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-09T01:15:39+08:00">
+                2016-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/09/09/laravelStart/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/09/09/laravelStart/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/09/09/laravelStart/" class="leancloud_visitors" data-flag-title="Laravel 从零开始">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Laravel-安装"><a href="#Laravel-安装" class="headerlink" title="Laravel 安装"></a>Laravel 安装</h1><p>1.下载<a href="https://getcomposer.org" target="_blank" rel="external">composer 官网</a><br>2.<code>mv composer.pr /usr/local/bin/composr</code><br>3.<code>laravel new blog</code> 或 <code>composer create-project --prefer-dist laravel/laracel Laravel5</code><br>4.使用 <code>php artisna serve</code> 来启动 laravel 框架<br><a id="more"></a></p>
+<h1 id="Laravel-基本工作流程"><a href="#Laravel-基本工作流程" class="headerlink" title="Laravel 基本工作流程"></a>Laravel 基本工作流程</h1><p>routes 路由文件：<br>你可以想象成为专门处理http请求的，比如get、post等。</p>
+<p>以前访问页面都是某个文件夹下面某个PHP文件 访问地址如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">images/index.php</div><div class="line">或</div><div class="line">www.xxx.com/images/index.php</div></pre></td></tr></table></figure>
+<p>打开 routes/web.php 你会发现里面有三行代码，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(&apos;/&apos;, function () &#123;</div><div class="line">    return view(&apos;welcome&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>在Laravel中 你会神奇的发现这是一条get 请求 「／」 目录 下一个匿名方法。<br>你可以将匿名函数内容改为  <code>return &#39;Hello world&#39;</code> 保存 ，访问 <a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> </p>
+<p>你会发现每次访问都要写一个匿名函数，我们通常会采取 Controller控制器 来访问。<br>下面我们来创建 Controller控制器 ，首先要使用 <strong>终端</strong> 进入你的项目根目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">php artisan make:controller NameController    # 创建一个不带方法的路由</div><div class="line"></div><div class="line">php artisan make:controller NameController --resource #创建一个带方法的路由</div></pre></td></tr></table></figure>
+<p>⚠️ 控制器的默认目录放在 app/Http/Controller 下</p>
+<p>打开刚刚创建的 控制器 在里面如下方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public function index()</div><div class="line">&#123;</div><div class="line">    return view(&apos;welcome&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们修改 <code>routes/web.php</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Route::get(&apos;/&apos;,&apos;NameController@index&apos;);</div><div class="line"></div><div class="line">//$router-&gt;get( &apos;/&apos; , &apos;NameController@index&apos; );</div><div class="line"></div><div class="line">//Route::resource(&apos;／&apos;, &apos;PhotoController&apos;); #我们在后面会讲解到，不要在这里纠结这是什么意思</div></pre></td></tr></table></figure>
+<p>⚠️ 上面2行代码是等效的。</p>
+<p>打开浏览器访问 <a href="http://127.0.0.1:80" target="_blank" rel="external">http://127.0.0.1:80</a> 你会惊奇的发现页面没有变化</p>
+<h1 id="Laravel向视图传递变量"><a href="#Laravel向视图传递变量" class="headerlink" title="Laravel向视图传递变量"></a>Laravel向视图传递变量</h1><p>这里 「name」是发送给视图的变量，「$name」是变量值</p>
+<h3 id="单个变量"><a href="#单个变量" class="headerlink" title="单个变量"></a>单个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return vier(&apos;about.about&apos;)-&gt;with(&apos;name&apos;,$name);</div></pre></td></tr></table></figure>
+<h3 id="多个变量"><a href="#多个变量" class="headerlink" title="多个变量"></a>多个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#方法1:</div><div class="line">return vier(&apos;about.about&apos;)-&gt;with([</div><div class="line">    &apos;first&apos;=&gt; &apos;one&apos;,</div><div class="line">    &apos;last&apos;=&gt; &apos;two&apos;</div><div class="line">]);     </div><div class="line"></div><div class="line"></div><div class="line">#方法2:</div><div class="line">$array=[];</div><div class="line">$array[&apos;farst&apos;]= &apos;one&apos;;</div><div class="line">$array[&apos;lost&apos;]= &apos;two&apos;;</div><div class="line">return vier(&apos;about.about&apos;,$array);</div></pre></td></tr></table></figure>
+<h3 id="多个或单个变量"><a href="#多个或单个变量" class="headerlink" title="多个或单个变量"></a>多个或单个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$first= &apos;one&apos;;</div><div class="line">$lost= &apos;two&apos;;</div><div class="line">return view(&apos;about.about&apos;,compact(&apos;first&apos;,&apos;lost&apos;)); # 个人倾向</div></pre></td></tr></table></figure>
+<p>在模板中使用变量 </p>
+<blockquote>
+<p>传统写法：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;?php $name ?&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>laravel写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; $name &#125;&#125;   #会转义变量</div><div class="line"></div><div class="line">&#123;!! $name !!&#125;  #不会转义变量 注意xss攻击</div></pre></td></tr></table></figure>
+<h1 id="Laravel-Blade-模板简介"><a href="#Laravel-Blade-模板简介" class="headerlink" title="Laravel Blade 模板简介"></a>Laravel Blade 模板简介</h1><p>比如我们需要新建一个页面，考虑页面CSS一至性，每次都要 cp ？ ❌<br>其实网们可以这样做 在 views/目录下新建 app.blade.php </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;&lt;/title&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/style.css&quot;/&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/external.min.css&quot;/&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">@yield(&apos;content&apos;) #重点在这里  设置一块content缓冲区</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>其他html页面可以删除body以上代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@extends(&apos;app&apos;)  #继承刚才新建的app.blade.php</div><div class="line"></div><div class="line">@section(&apos;content&apos;)  #创建一块content缓冲区</div><div class="line">    #body正文</div><div class="line">@stop #一个section对应1个stop</div></pre></td></tr></table></figure></p>
+<p>⚠️ 如果一个页面西药特定文件怎么办 没错就是在创建一块缓冲区</p>
+<p>这个你学会了，在来的新技能吧！</p>
+<h2 id="在模版中使用条件-循环"><a href="#在模版中使用条件-循环" class="headerlink" title="在模版中使用条件 循环"></a>在模版中使用条件 循环</h2><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@if(true)</div><div class="line">    &lt;h1&gt; true &lt;/h1&gt;</div><div class="line">@else</div><div class="line">    flast</div><div class="line">@endif</div></pre></td></tr></table></figure>
+<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@foreach($array as $key) </div><div class="line">    &#123;&#123; $key &#125;&#125;</div><div class="line">@endforeach</div></pre></td></tr></table></figure>
+<h1 id="Laravel环境配置-env"><a href="#Laravel环境配置-env" class="headerlink" title="Laravel环境配置.env"></a>Laravel环境配置.env</h1><p>env(‘.env名称’,’默认值’)</p>
+<h1 id="美化phpstorm"><a href="#美化phpstorm" class="headerlink" title="美化phpstorm"></a>美化phpstorm</h1><p><a href="https://www.laravist.com/series/phpstorm-the-best-php-ide-you-ever-met/episodes/2" target="_blank" rel="external">https://www.laravist.com/series/phpstorm-the-best-php-ide-you-ever-met/episodes/2</a></p>
+<h1 id="mac终端美化："><a href="#mac终端美化：" class="headerlink" title="mac终端美化："></a>mac终端美化：</h1><h2 id="安装「oh-my-zsh」可以自动安装也可以手动安装"><a href="#安装「oh-my-zsh」可以自动安装也可以手动安装" class="headerlink" title="安装「oh my zsh」可以自动安装也可以手动安装"></a>安装「oh my zsh」可以自动安装也可以手动安装</h2><p><strong>推荐手动安装</strong></p>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">Github地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div></pre></td></tr></table></figure></p>
+<h3 id="自动安装"><a href="#自动安装" class="headerlink" title="自动安装"></a>自动安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<h3 id="替换bash为zsh"><a href="#替换bash为zsh" class="headerlink" title="替换bash为zsh"></a>替换bash为zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
+<h2 id="自动提示插件安装"><a href="#自动提示插件安装" class="headerlink" title="自动提示插件安装"></a>自动提示插件安装</h2><h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions</div><div class="line"></div><div class="line">#将下命令添加到你的 .zshrc:</div><div class="line">source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh</div></pre></td></tr></table></figure>
+<h2 id="git问题大全"><a href="#git问题大全" class="headerlink" title="git问题大全"></a>git问题大全</h2><h3 id="执行git-push错误时的解决方法"><a href="#执行git-push错误时的解决方法" class="headerlink" title="执行git push错误时的解决方法"></a>执行git push错误时的解决方法</h3><p>默认情况下在执行 <code>git push</code> 时，系统会提示error而无法成功推送。这是由于git默认拒绝了push操作，需要进行设置，修改远程仓库目录中的 .git/config 文件.</p>
+<p><strong>解决方法：</strong><br>在后面添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[receive]</div><div class="line">       denyCurrentBranch = ignore</div><div class="line">```       </div><div class="line"></div><div class="line">### 执行git push后，服务器端无法查看到推送内容的原因及解决方法</div><div class="line">在初始化远程仓库时最好使用：`git --bare init`，而不要使用：`git init`</div><div class="line">如果使用了`git init` 初始化，则远程仓库的目录下也包含 work tree。当本地仓库向远程仓库push时，如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上，也即在远程仓库的目录下对应的文件还是之前的内容。</div><div class="line"></div><div class="line">**解决方法：**</div><div class="line">远程端必须运行命令：`git reset --hard` 才能看到 push 后的内容。</div><div class="line">### 解决因git源代码库路径发生变化，导致本地代码库无法同步的问题</div><div class="line">如果执行git clone之后，源代码库的路径发生变化，导致无法与源代码保持一致，可以修改本地代码库的.git/config文件以更新源代码路径，例如：</div><div class="line">vi .git/config</div><div class="line">内容如下：</div></pre></td></tr></table></figure>
+<p>[core]<br>        repositoryformatversion = 0<br>        filemode = true<br>        bare = false<br>        logallrefupdates = true<br>[remote “origin”]<br>        fetch = +refs/heads/<em>:refs/remotes/origin/</em><br>        url = /home/android/gitTestSource<br>[branch “master”]<br>        remote = origin<br>        merge = refs/heads/master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**解决方法：**</div><div class="line">如果现在/home/android/gitTestSource目录的文件被移动到了/home/android/project/gitTestSource目录，则可将其中的url = /home/android/gitTestSource改为：url = /home/android/project/gitTestSource。</div><div class="line"></div><div class="line">### git  Unable to create temporary file</div><div class="line">1）出现 `Unable to create temporary file: Permission denied`</div><div class="line">在Windows上使用TortoiseGit执行Push时出现以下错误</div></pre></td></tr></table></figure></p>
+<p>git.exe push –force –progress  “origin” master:master<br>Counting objects: 189, done.<br>Compressing objects: 100% (187/187)<br>Writing objects:   7% (14/189)<br>fatal: Unable to create temporary file: Permission denied<br>fatal: sha1 file ‘<stdout>‘ write error: Invalid argument<br>error: failed to push some refs to ‘git@110.73.4.46:channelv.git’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">`git did not exit cleanly (exit code 1)`</div><div class="line">原来是服务器上是用root账户建立的库目录，导致git账户无权写入，方法就是修改文件夹的所属用户和所属用户组</div></pre></td></tr></table></figure></stdout></p>
+<p>chown -R git <em><br>chgrp -R git </em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">2）出现 `failed to push some refs to &apos;git@110.731.41.46:channelv.git&apos;`</div><div class="line"></div><div class="line">在Windows上使用TortoiseGit执行Push时出现以下错误</div></pre></td></tr></table></figure></p>
+<p>git.exe push –progress  “origin” master:master<br>Counting objects: 189, done.<br>Compressing objects: 100% (158/158)<br>Writing objects: 100% (189/189), 1016.00 KiB | 997 KiB/s<br>Writing objects: 100% (189/189), 1.12 MiB | 997 KiB/s, done.<br>remote: error: ‘receive.denyCurrentBranch’ configuration variable to ‘refuse’.<br>To git@101.713.4.46:channelv.git<br>! [remote rejected] master -&gt; master (branch is currently checked out)<br>error: failed to push some refs to ‘git@10.73.4.46:channelv.git’<br>git did not exit cleanly (exit code 1)<br>```</p>
+<p>在服务器对应的库目录下执行以下命令增加配置即可</p>
+<p><code>git config --bool core.bare true</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.jpg" alt="韩月 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhiply.jpg" alt="韩月 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/Laravel/" rel="tag"># Laravel</a>
+          
+            <a href="/tags/phpstome/" rel="tag"># phpstome</a>
+          
+            <a href="/tags/oh-my-zsh/" rel="tag"># oh my zsh</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/08/laravelExecl/" rel="next" title="Laravel中的Excel">
+                <i class="fa fa-chevron-left"></i> Laravel中的Excel
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/14/MacOpenError/" rel="prev" title="macOS Sierra 如何打开任何来源">
+                macOS Sierra 如何打开任何来源 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="韩月" />
+          <p class="site-author-name" itemprop="name">韩月</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sonny" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/your-user-name" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-安装"><span class="nav-number">1.</span> <span class="nav-text">Laravel 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-基本工作流程"><span class="nav-number">2.</span> <span class="nav-text">Laravel 基本工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel向视图传递变量"><span class="nav-number">3.</span> <span class="nav-text">Laravel向视图传递变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单个变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">单个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个变量"><span class="nav-number">3.0.2.</span> <span class="nav-text">多个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个或单个变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">多个或单个变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-Blade-模板简介"><span class="nav-number">4.</span> <span class="nav-text">Laravel Blade 模板简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在模版中使用条件-循环"><span class="nav-number">4.1.</span> <span class="nav-text">在模版中使用条件 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件判断"><span class="nav-number">4.1.1.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">4.1.2.</span> <span class="nav-text">循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel环境配置-env"><span class="nav-number">5.</span> <span class="nav-text">Laravel环境配置.env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美化phpstorm"><span class="nav-number">6.</span> <span class="nav-text">美化phpstorm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac终端美化："><span class="nav-number">7.</span> <span class="nav-text">mac终端美化：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装「oh-my-zsh」可以自动安装也可以手动安装"><span class="nav-number">7.1.</span> <span class="nav-text">安装「oh my zsh」可以自动安装也可以手动安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">7.1.1.</span> <span class="nav-text">手动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动安装"><span class="nav-number">7.1.2.</span> <span class="nav-text">自动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换bash为zsh"><span class="nav-number">7.1.3.</span> <span class="nav-text">替换bash为zsh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动提示插件安装"><span class="nav-number">7.2.</span> <span class="nav-text">自动提示插件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载插件"><span class="nav-number">7.2.1.</span> <span class="nav-text">下载插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git问题大全"><span class="nav-number">7.3.</span> <span class="nav-text">git问题大全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行git-push错误时的解决方法"><span class="nav-number">7.3.1.</span> <span class="nav-text">执行git push错误时的解决方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩月</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://disqus_y2qG9mSzU4.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2016/09/09/laravelStart/';
+          this.page.identifier = '2016/09/09/laravelStart/';
+          this.page.title = 'Laravel 从零开始';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://disqus_y2qG9mSzU4.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("NKTDaSdUhTnAkDGbSDu7T9Vc-gzGzoHsz", "Q6OLnPhXA67rwYezNFkthzAw");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
