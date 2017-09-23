@@ -98,7 +98,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="韩月">
-<meta property="og:url" content="http://yoursite.com/tags/Laravel/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/laravel/index.html">
 <meta property="og:site_name" content="韩月">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Laravel/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/laravel/"/>
 
 
 
 
 
-  <title>标签: Laravel | 韩月</title>
+  <title>标签: laravel | 韩月</title>
   
 
 
@@ -317,7 +317,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Laravel<small>标签</small>
+        <h1>laravel<small>标签</small>
         </h1>
       </div>
 
@@ -329,37 +329,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2016/09/09/laravelStart/" itemprop="url">
+            <a class="post-title-link" href="/2016/09/18/laravelMoHuSelect/" itemprop="url">
               
-                <span itemprop="name">Laravel 从零开始</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-09T01:15:39+08:00"
-              content="2016-09-09" >
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/09/08/laravelExecl/" itemprop="url">
-              
-                <span itemprop="name">Laravel中的Excel</span>
+                <span itemprop="name">laravel最优雅的模糊查询</span>
               
             </a>
         
@@ -367,9 +339,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-08T01:57:23+08:00"
-              content="2016-09-08" >
-          09-08
+              datetime="2016-09-18T08:27:48+08:00"
+              content="2016-09-18" >
+          09-18
         </time>
       </div>
 
@@ -1055,6 +1027,44 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+s-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
