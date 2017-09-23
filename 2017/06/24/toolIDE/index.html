@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xm" title="韩月" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="开发必备部分软件安装配置教程 文件打开提示放入垃圾桶打开终端键入：sudo spctl --master-disable 输入密码即可 本人命令放在 ~/bin 中 在 .zshrc 中 引入 export PATH=&amp;#39;/Users/baby/bin&amp;#39;:$PATH  brew：安装：安装前需要下载Xcode官网自行安装：https://brew.sh 插件 123456brew i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MAC开发工具大杂烩">
+<meta property="og:url" content="http://yoursite.com/2017/06/24/toolIDE/index.html">
+<meta property="og:site_name" content="韩月">
+<meta property="og:description" content="开发必备部分软件安装配置教程 文件打开提示放入垃圾桶打开终端键入：sudo spctl --master-disable 输入密码即可 本人命令放在 ~/bin 中 在 .zshrc 中 引入 export PATH=&amp;#39;/Users/baby/bin&amp;#39;:$PATH  brew：安装：安装前需要下载Xcode官网自行安装：https://brew.sh 插件 123456brew i">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046381900701.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046383296331.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046377401155.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046378769341.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046441733710.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046443304233.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/oicc.png">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15050353264309.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046386227539.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/iter.png">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047456737706.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047461885857.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046512637733.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047436875078.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047153533249.jpg">
+<meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047156552449.jpg">
+<meta property="og:updated_time" content="2017-09-23T18:02:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MAC开发工具大杂烩">
+<meta name="twitter:description" content="开发必备部分软件安装配置教程 文件打开提示放入垃圾桶打开终端键入：sudo spctl --master-disable 输入密码即可 本人命令放在 ~/bin 中 在 .zshrc 中 引入 export PATH=&amp;#39;/Users/baby/bin&amp;#39;:$PATH  brew：安装：安装前需要下载Xcode官网自行安装：https://brew.sh 插件 123456brew i">
+<meta name="twitter:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046381900701.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/24/toolIDE/"/>
+
+
+
+
+
+  <title>MAC开发工具大杂烩 | 韩月</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ef0b67dc65dc2c144e5ac3602cb22140";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">韩月</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/24/toolIDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/31846849?v=4&u=07ff1ac4dd489ba810976f305c7a31a1b914f2c6&s=400">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="韩月">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MAC开发工具大杂烩</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T01:51:58+08:00">
+                2017-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/06/24/toolIDE/" class="leancloud_visitors" data-flag-title="MAC开发工具大杂烩">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>开发必备部分软件安装配置教程</p>
+<p>文件打开提示放入垃圾桶打开终端键入：<code>sudo spctl --master-disable</code> 输入密码即可</p>
+<p>本人命令放在 <code>~/bin</code> 中 在 .zshrc 中 引入 <code>export PATH=&#39;/Users/baby/bin&#39;:$PATH</code> </p>
+<h1 id="brew："><a href="#brew：" class="headerlink" title="brew："></a>brew：</h1><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>安装前需要下载Xcode<br>官网自行安装：<a href="https://brew.sh" target="_blank" rel="external">https://brew.sh</a></p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">brew install tig  /*高亮美化*/</div><div class="line"></div><div class="line">brew install ccat /*美化cat命令*/</div><div class="line">alias cat=ccat    /*替换系统cat命令*/   </div><div class="line"></div><div class="line">brew install tree  /*树形目录*/</div></pre></td></tr></table></figure>
+<h3 id="切换PHP版本"><a href="#切换PHP版本" class="headerlink" title="切换PHP版本"></a>切换PHP版本</h3><p>一、使用brew安装php多版本方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install php56</div><div class="line">brew install php70</div></pre></td></tr></table></figure>
+<p>二、安装切换工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew install php-version</div><div class="line">source $(brew --prefix php-version)/php-version.sh</div></pre></td></tr></table></figure>
+<p>三、查看当前安装的所有版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php-version</div></pre></td></tr></table></figure>
+<p>四、切换版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php-version 5.6.5</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">brew list</div><div class="line">brew services start homebrew/php/php71</div><div class="line">brew services restart php71</div><div class="line">brew unlink php71</div></pre></td></tr></table></figure>
+<h1 id="Iterm："><a href="#Iterm：" class="headerlink" title="Iterm："></a>Iterm：</h1><h3 id="下载-amp-安装：Itrem2"><a href="#下载-amp-安装：Itrem2" class="headerlink" title="下载&amp;安装：Itrem2"></a>下载&amp;安装：Itrem2</h3><p>下载地址:<a href="http://www.iterm2.com/downloads.html" target="_blank" rel="external">http://www.iterm2.com/downloads.html</a><br>下载完成后直接拖到应用程序中</p>
+<p>设置选项：<br>去除<img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046381900701.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">touch .hushlogin</div></pre></td></tr></table></figure>
+<p>效果如下：  是不是干净很清爽<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046383296331.jpg" alt=""></p>
+<h3 id="自动提示：zsh-autosuggestions"><a href="#自动提示：zsh-autosuggestions" class="headerlink" title="自动提示：zsh-autosuggestions"></a>自动提示：zsh-autosuggestions</h3><p>下载&amp;安装<br>依然是在github中：<a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">zsh-autosuggestions</a><br>手动安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions</div></pre></td></tr></table></figure>
+<p>打开 <code>~/.zshrc</code> 文件 在做后一行换行添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh</div></pre></td></tr></table></figure>
+<p>退出iterm2 重新打开即可</p>
+<p><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046377401155.jpg" alt=""><br>1:com+q 直接退出  2: cond+end 在当前窗口全屏</p>
+<p><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046378769341.jpg" alt=""><br>快捷键：在任何地方呼出iterm2 . 这里设施的是英文状态下的～ 数字数字1傍边那个</p>
+<hr>
+<p>材料：<br>Oh-My-zsh:<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">Oh-My-zsh</a> || github上搜索<br>使用via curl下载<br>输入密码即可<br>配置文件存在于 <code>~/.zshrc</code> 打开它 大概第10行 <code>ZSH_THEME=&quot;robbyrussell&quot;</code> 我这里是 <code>ZSH_THEME=&quot;cloud&quot;</code></p>
+<p>打开 <a href="https://draculatheme.com" target="_blank" rel="external">https://draculatheme.com</a> 找到iterm2 进行下载<br>引入选择刚刚下载的主题配置：<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046441733710.jpg" alt=""></p>
+<p>字体设置：<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046443304233.jpg" alt=""></p>
+<p>最终系效果图-<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/oicc.png" alt="oic"></p>
+<h4 id="加在缓慢："><a href="#加在缓慢：" class="headerlink" title="加在缓慢："></a>加在缓慢：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /private/var/log/asl/*.asl</div></pre></td></tr></table></figure>
+<p>清理了终端 log 就好了 干净无用</p>
+<h3 id="shell-语法高亮"><a href="#shell-语法高亮" class="headerlink" title="shell 语法高亮"></a>shell 语法高亮</h3><p>先上图 2333：<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15050353264309.jpg" alt=""></p>
+<p>炫不炫 绿色代表存在这个命令 一眼就看出来了，如果打错了，它就是红色的</p>
+<p>下载方式有很多，请自行安装，本人使用的手动安装 走你–&gt;<br>插件git地址: <a href="https://github.com/zsh-users/zsh-syntax-highlighting" target="_blank" rel="external">zsh-syntax-highlighting</a></p>
+<p>安装起来非常简单，clone到$ZSH_CUSTOM/plugins目录，然后在.zshrc文件正配置一下即可。</p>
+<h1 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h1><p>下载&amp;安装：<br>打开sublime text 菜单栏找到 Tools -&gt; install Packge… 稍等片刻即好，编辑器左下角安装状态<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046386227539.jpg" alt=""></p>
+<p>主题：command+shit+p –&gt; install Package –&gt; Material Theme;<br>地址：<a href="https://github.com/equinusocio/material-theme" target="_blank" rel="external">https://github.com/equinusocio/material-theme</a></p>
+<p>配置：<br>command + ,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;color_scheme&quot;: &quot;Packages/Material Theme/schemes/Material-Theme.tmTheme&quot;,</div><div class="line">	&quot;font_face&quot;: &quot;Fira Code&quot;,</div><div class="line">	&quot;font_size&quot;: 14,</div><div class="line">	&quot;ignored_packages&quot;:</div><div class="line">	[</div><div class="line">		&quot;Vintage&quot;</div><div class="line">	],</div><div class="line">	&quot;line_padding_bottom&quot;: 2,</div><div class="line">	&quot;line_padding_top&quot;: 2,</div><div class="line">	&quot;open_files_in_new_window&quot;: false,</div><div class="line">	&quot;theme&quot;: &quot;Material-Theme.sublime-theme&quot;,</div><div class="line">	&quot;update_check&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>对应：配色、字体、字号、【 】、行与行上间距、行与行下间距、禁止打开文件新建窗口、启动时创建窗口、主题、关闭自动更新提示<br>字体：链接: <a href="https://pan.baidu.com/s/1nuCW4Lb" target="_blank" rel="external">https://pan.baidu.com/s/1nuCW4Lb</a> 密码: mxvv</p>
+<h3 id="通过命令行启动"><a href="#通过命令行启动" class="headerlink" title="通过命令行启动"></a>通过命令行启动</h3><p>官网地址：<a href="https://www.sublimetext.com/docs/3/osx_command_line.html" target="_blank" rel="external">https://www.sublimetext.com/docs/3/osx_command_line.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir ~/bin</div><div class="line">ln -s &apos;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&apos; ~/bin/subl</div><div class="line"></div><div class="line">cd ~/bin</div><div class="line">vi .bashrc</div><div class="line">export PATH=&quot;/Users/baby/bin:$PATH&quot;</div><div class="line">source .bashrc</div></pre></td></tr></table></figure></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/iter.png" alt="ite"></p>
+<h3 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h3><p>针对subl3 </p>
+<p>1、按Control + ~打开命令行,然后输入下面这一行代码 代码报错<a href="https://packagecontrol.io/installation" target="_blank" rel="external">点我</a> 复制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read())</div></pre></td></tr></table></figure>
+<p>执行之后，必须重启Subl3，才能继续</p>
+<p>2、安装ConvertToUTF8<br>按Command + Shift + P打开万能搜索框<br>然后输入install package回车，这时候会加载所有的packges列表。看到列表之后再输入ConvertToUTF8回车，就会下载安装这个包。装好之后会看到个包的说明文件，</p>
+<p>3.重复2步骤 看到列表之后输入Codecs33回车。</p>
+<blockquote>
+<p>原因: 由于 Sublime Text 3 内嵌的 Python 限制，ConvertToUTF8 可能无法正常工作,所以你懂的</p>
+</blockquote>
+<h1 id="Phpstrome"><a href="#Phpstrome" class="headerlink" title="Phpstrome"></a>Phpstrome</h1><h3 id="主题安装："><a href="#主题安装：" class="headerlink" title="主题安装："></a>主题安装：</h3><p>cmd+shift + a 搜索 plugins -&gt;点击 brow reposit… 搜索 Material Theme UI 选中 然后install ，安装完毕重启。<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047456737706.jpg" alt=""></p>
+<h4 id="生效"><a href="#生效" class="headerlink" title="生效"></a>生效</h4><p>cmd+,Editor–&gt;Color &amp; Fonts 选择主题生效 点击右下角完成<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047461885857.jpg" alt=""></p>
+<p>comd+1 左侧</p>
+<p>面包屑：<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046512637733.jpg" alt=""><br>tabs placement :</p>
+<h3 id="讨厌的波浪线"><a href="#讨厌的波浪线" class="headerlink" title="讨厌的波浪线"></a>讨厌的波浪线</h3><p>command shift a 搜，warning 去设置一下，或者是 typo<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047436875078.jpg" alt=""></p>
+<h3 id="Xdebug-phpstome"><a href="#Xdebug-phpstome" class="headerlink" title="Xdebug-phpstome"></a>Xdebug-phpstome</h3><p>1.首先下载Debug</p>
+<p>2.配置php.ini</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[xdebug]</div><div class="line">xdebug.remote_autostart=1</div><div class="line">xdebug.default_enable=1</div><div class="line">xdebug.remote_port=9001</div><div class="line">xdebug.remote_host=127.0.0.1</div><div class="line">xdebug.remote_connect_back=1</div><div class="line">xdebug.remote_enable=1</div><div class="line">xdebug.idekey=PHPSTORM</div></pre></td></tr></table></figure>
+<p>3.重启下php-fpm</p>
+<p>4.配置PHPstorm</p>
+<pre><code>* phpstorm -&gt; preferences 打开设置页面：
+* 然后，再选择 Languages -&gt; php -&gt; Debug 下，将Xdebug 下的Debug port 改成9001，和php.ini中设置的一致
+</code></pre><p>//OK。xdebug端口配置好了</p>
+<p>debug也只是针对某一个页面在做的。我们以index.php页面为例，先打开index.php，菜单栏点击 run –&gt;Edit Configurations 打开设置页面：<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047153533249.jpg" alt=""></p>
+<p>设置完成control+d 运行<br>Cli interpreter 错误 comd+shift+a 输入 Cli interpreter ，enter<br><img src="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047156552449.jpg" alt=""></p>
+<p>参考：<code>http://blog.csdn.net/think2me/article/details/45344489</code></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>export = ‘’:$PATH<br>source ./bashrc<br>       .bash_profile<br>alias filename =’’</p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>git config –global user.name ‘username’<br>git config –global user.emali ‘You-Emali’</p>
+<p>ssh-keygen -t rsa -C ‘You-Emali’</p>
+<p>id_rsa 私钥<br>id_rsa.pub 弓腰<br>known_hosts 记录<br>authorized_keys 和做人弓腰</p>
+<h2 id="优化git"><a href="#优化git" class="headerlink" title="优化git"></a>优化git</h2><p>使用 <code>git add .</code> 、 <code>git commit -m</code> 很繁琐索性优化下<br>首先在 <code>~/bin/</code> touch 一个 .alias 文件 写入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">alias gaa=&quot;git add .&quot;</div><div class="line"></div><div class="line">alias gc=&quot;git commit -m &quot;</div><div class="line"></div><div class="line">alias gp=&quot;git push&quot;</div><div class="line"></div><div class="line">alias gs=&quot;git status&quot;</div><div class="line"></div><div class="line">#alias gl=&quot;git log --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit&quot;</div><div class="line"></div><div class="line">#alias gll=&quot;git log --graph --abbrev-commit --decorate --all --format=format:&apos;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)&apos;&quot;</div></pre></td></tr></table></figure>
+<p>编辑 <code>~/.zshrc</code> 最后加上 <code>source ~/bin/.alias</code> 即可。</p>
+<h2 id="代码规范插件phpcode"><a href="#代码规范插件phpcode" class="headerlink" title="代码规范插件phpcode"></a>代码规范插件phpcode</h2><h3 id="安装-amp-更新"><a href="#安装-amp-更新" class="headerlink" title="安装&amp;更新"></a>安装&amp;更新</h3><p>官网<a href="http://cs.sensiolabs.org" target="_blank" rel="external">http://cs.sensiolabs.org</a><br>需要使用 PHP 5.3.6 以上的版本</p>
+<p>curl 下载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -o php-cs-fixer</div></pre></td></tr></table></figure>
+<p>wget 下载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer</div><div class="line"></div><div class="line">or</div><div class="line"></div><div class="line">wget https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.4.0/php-cs-fixer.phar -O php-cs-fixer</div></pre></td></tr></table></figure>
+<p>下载完成后给可执行的权限，然后移动到 bin 目录下面即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod a+x php-cs-fixer</div><div class="line">sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer</div></pre></td></tr></table></figure>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>用法也很简单，最基本的命令参数就是 fix，直接执行时会尽可能多的根据默认标准格式化代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 格式化目录 如果是当前目录的话可以省略目录</div><div class="line">php-cs-fixer fix /path/to/dir</div><div class="line"># 格式化文件</div><div class="line">php-cs-fixer.phar fix /path/to/file</div></pre></td></tr></table></figure>
+<h1 id="课外阅读"><a href="#课外阅读" class="headerlink" title="课外阅读"></a>课外阅读</h1><h1 id="优酷免费去广告"><a href="#优酷免费去广告" class="headerlink" title="优酷免费去广告"></a>优酷免费去广告</h1><p>打开 Chrome 的开发者工具，在 console 面板粘贴以下代码然后执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.sessionStorage.setItem(&quot;P_l_h5&quot;, true);</div></pre></td></tr></table></figure>
+<p>然后刷新，或者你使用其他浏览器的话，也是打开开发者工具，通常快捷键就是 F12，使用上面的代码。</p>
+<h1 id="释放你的F5-comd-R"><a href="#释放你的F5-comd-R" class="headerlink" title="释放你的F5(comd+R)"></a>释放你的F5(comd+R)</h1><p>这是官网<a href="http://www.browsersync.cn/" target="_blank" rel="external">browsersync</a><br>基于node.js<br>npm install -g browser-sync</p>
+<p>启动 BrowserSync<br>    需要进入项目目录！！<br>    需要进入项目目录！！<br>    需要进入项目目录！！</p>
+<p>静态网站<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// --files 路径是相对于运行该命令的项目（目录） </div><div class="line">browser-sync start --server --files &quot;css/*.css&quot;</div></pre></td></tr></table></figure></p>
+<p>如果您需要监听多个类型的文件，您只需要用逗号隔开。</p>
+<p>动态网站<br>如果您已经有其他本地服务器环境PHP或类似的，您需要使用代理模式。 BrowserSync将通过代理URL(localhost:3000)来查看您的网站。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 主机名可以是ip或域名 这是官网给出的本人MAC无法使用</div><div class="line">browser-sync start --proxy &quot;主机名&quot; &quot;css/*.css&quot;</div></pre></td></tr></table></figure>
+<p>在本地创建了一个PHP服务器环境，并通过绑定Browsersync.cn来访问本地服务器，使用以下命令方式，Browsersync将提供一个新的地址localhost:3000来访问Browsersync.cn，并监听其css目录下的所有css文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser-sync start --proxy &quot;Browsersync.cn&quot; &quot;css/*.css&quot;</div></pre></td></tr></table></figure>
+<p>无法使用怎么办？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser-sync start --proxy &quot;主机名&quot; --files &quot;css/*.css&quot;</div></pre></td></tr></table></figure>
+<p>ok 可以啦</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.jpg" alt="韩月 WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhiply.jpg" alt="韩月 Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/gitToWebPage/" rel="next" title="git推送到服务器自动同步到站点目录">
+                <i class="fa fa-chevron-left"></i> git推送到服务器自动同步到站点目录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/31846849?v=4&u=07ff1ac4dd489ba810976f305c7a31a1b914f2c6&s=400"
+               alt="韩月" />
+          <p class="site-author-name" itemprop="name">韩月</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xm" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/asonny" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/your-user-name" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brew："><span class="nav-number">1.</span> <span class="nav-text">brew：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装："><span class="nav-number">1.0.1.</span> <span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">1.0.2.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换PHP版本"><span class="nav-number">1.0.3.</span> <span class="nav-text">切换PHP版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Iterm："><span class="nav-number">2.</span> <span class="nav-text">Iterm：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-amp-安装：Itrem2"><span class="nav-number">2.0.1.</span> <span class="nav-text">下载&安装：Itrem2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动提示：zsh-autosuggestions"><span class="nav-number">2.0.2.</span> <span class="nav-text">自动提示：zsh-autosuggestions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加在缓慢："><span class="nav-number">2.0.2.1.</span> <span class="nav-text">加在缓慢：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell-语法高亮"><span class="nav-number">2.0.3.</span> <span class="nav-text">shell 语法高亮</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sublime"><span class="nav-number">3.</span> <span class="nav-text">Sublime</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过命令行启动"><span class="nav-number">3.0.1.</span> <span class="nav-text">通过命令行启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">3.0.2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码问题"><span class="nav-number">3.0.3.</span> <span class="nav-text">编码问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Phpstrome"><span class="nav-number">4.</span> <span class="nav-text">Phpstrome</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题安装："><span class="nav-number">4.0.1.</span> <span class="nav-text">主题安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生效"><span class="nav-number">4.0.1.1.</span> <span class="nav-text">生效</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讨厌的波浪线"><span class="nav-number">4.0.2.</span> <span class="nav-text">讨厌的波浪线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xdebug-phpstome"><span class="nav-number">4.0.3.</span> <span class="nav-text">Xdebug-phpstome</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">6.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优化git"><span class="nav-number">6.1.</span> <span class="nav-text">优化git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码规范插件phpcode"><span class="nav-number">6.2.</span> <span class="nav-text">代码规范插件phpcode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-amp-更新"><span class="nav-number">6.2.1.</span> <span class="nav-text">安装&更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">6.2.2.</span> <span class="nav-text">用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课外阅读"><span class="nav-number">7.</span> <span class="nav-text">课外阅读</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优酷免费去广告"><span class="nav-number">8.</span> <span class="nav-text">优酷免费去广告</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#释放你的F5-comd-R"><span class="nav-number">9.</span> <span class="nav-text">释放你的F5(comd+R)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">韩月</span>
+</div>
+
+
+<div class="powered-by">
+  <a class="theme-link" href="http://www.llaravel.com">点我</a> 个人专属
+</div>
+
+<div class="theme-info">
+  博客 -
+" http://www.llaravel.com"
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("NKTDaSdUhTnAkDGbSDu7T9Vc-gzGzoHsz", "Q6OLnPhXA67rwYezNFkthzAw");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
