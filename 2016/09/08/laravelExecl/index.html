@@ -445,27 +445,80 @@
       
         <p>Laravel Excel 在 Laravel 5 中集成 PHPOffice 套件中的 PHPExcel ，从而方便我们以优雅的、富有表现力的代码实现Excel/CSV文件的导入和 导出 。<br>该项目的GitHub地址是： <a href="https://github.com/Maatwebsite/Laravel-Excel" target="_blank" rel="external">https://github.com/Maatwebsite/Laravel-Excel</a> 。<br>本文我们将在Laravel中使用Laravel Excel简单实现Excel文件的导入和导出<br><a id="more"></a></p>
 <h1 id="2、安装-amp-配置"><a href="#2、安装-amp-配置" class="headerlink" title="2、安装&amp;配置"></a>2、安装&amp;配置</h1><p>使用Composer安装依赖<br>首先在Laravel项目根目录下使用Composer安装依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require maatwebsite/excel ~2.0.0</div></pre></td></tr></table></figure>
-<p>安装后的设置<br>在 config/app.php 中注册服务提供者到 providers 数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Maatwebsite\Excel\ExcelServiceProvider::class,</div></pre></td></tr></table></figure>
-<p>同样在 config/app.php 中注册门面到 aliases 数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;Excel&apos; =&gt; Maatwebsite\Excel\Facades\Excel::class,</div></pre></td></tr></table></figure>
-<p>如果想要对Laravel Excel进行更多的自定义配置，执行如下Artisan命令，执行成功后会在 config 目录下生成一个配置文件 excel.php 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan vendor:publish</div></pre></td></tr></table></figure>
-<h1 id="3、导出Excel文件"><a href="#3、导出Excel文件" class="headerlink" title="3、导出Excel文件"></a>3、导出Excel文件</h1><p>为了演示Laravel Excel相关功能，我们为本测试创建一个干净的控制器 ExcelController.php ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php artisan make:controller ExcelController --plain</div></pre></td></tr></table></figure>
-<p>然后在 web.php 中定义相关路由：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$router-&gt;get(&apos;excel/export&apos;,&apos;ExcelController@export&apos;);</div><div class="line">$router-&gt;get(&apos;excel/import&apos;,&apos;ExcelController@import&apos;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">namespace App\Http\Controllers\Api;</div><div class="line">use DB;</div><div class="line">use Excel;</div><div class="line">use App\Http\Controllers\Controller;</div><div class="line">use Illuminate\Http\Request;</div><div class="line">class ExcelController extends Controller</div><div class="line">&#123;</div><div class="line">	Excel文件导出功能</div><div class="line">	public function export()</div><div class="line">	&#123;</div><div class="line">	$info = DB::table(&apos;dtsz&apos;)</div><div class="line">		-&gt;select(&apos;id&apos;, &apos;name&apos;, &apos;phone&apos;, &apos;yiyuan&apos;, &apos;dlsname&apos;, &apos;pname&apos;, &apos;addtime&apos;, &apos;logintime&apos;)</div><div class="line">		-&gt;get();</div><div class="line">	$cellData = [</div><div class="line">		[&apos;共&apos;.count($info).&apos;条&apos;],</div><div class="line">		[&apos; &apos;,&apos;姓名&apos;, &apos;电话&apos;, &apos;所在医院&apos;, &apos;推荐人&apos;, &apos;所在地区&apos;, &apos;注册日期&apos;, &apos;最后登录日期&apos;, &apos;总计登录天数&apos;, &apos;转诊病人数(含新转诊)&apos;, &apos;总计提现金额(含未审核)&apos;, &apos;剩余积分(含未审核)&apos;],</div><div class="line">	];</div><div class="line">	foreach ($info as $k =&gt; $v) &#123;</div><div class="line">		$count  = DB::table(&apos;patients&apos;)-&gt;where(&apos;uid&apos;, $v-&gt;id)-&gt;count();</div><div class="line">		$get    = DB::table(&apos;jifenlog&apos;)-&gt;where(&apos;uid&apos;, $v-&gt;id)-&gt;where(&apos;sztype&apos;, 0)-&gt;select(DB::raw(&apos;SUM(jifen) as total_sales&apos;))-&gt;first();</div><div class="line">		$out    = DB::table(&apos;jifenlog&apos;)-&gt;where(&apos;uid&apos;, $v-&gt;id)-&gt;where(&apos;sztype&apos;, 1)-&gt;select(DB::raw(&apos;SUM(jifen) as total_sales&apos;))-&gt;first();</div><div class="line">		$cellData[$k + 2][] = $k + 1;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;name ? $v-&gt;name : &apos;&apos;;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;phone ? $v-&gt;phone : &apos;&apos;;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;yiyuan ? $v-&gt;yiyuan : &apos;&apos;;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;dlsname ? $v-&gt;dlsname : &apos;&apos;;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;pname ? $v-&gt;pname : &apos;&apos;;</div><div class="line">		$cellData[$k + 2][] = date(&apos;Y-m-d H:i:s&apos;, $v-&gt;addtime);</div><div class="line">		$cellData[$k + 2][] = date(&apos;Y-m-d H:i:s&apos;, $v-&gt;logintime);</div><div class="line">		$cellData[$k + 2][] = $v-&gt;day = 0;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;count_human = $count;</div><div class="line">		$cellData[$k + 2][] = $v-&gt;count_sum = $get-&gt;total_sales ? $get-&gt;total_sales : 0;</div><div class="line">		$cellData[$k + 2][] = $out-&gt;total_sales ? $out-&gt;total_sales : 0;</div><div class="line">	&#125;</div><div class="line">	Excel::create(&apos;召回用户黑名单&apos;, function ($excel) use ($cellData) &#123;</div><div class="line">		$excel-&gt;sheet(&apos;score&apos;, function ($sheet) use ($cellData) &#123;</div><div class="line">			$sheet-&gt;rows($cellData);</div><div class="line">		&#125;);</div><div class="line">	&#125;)-&gt;export(&apos;xls&apos;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们在浏览器中访问 <a href="http://localhost:8000/excel/export" target="_blank" rel="external">http://localhost:8000/excel/export</a> ，会导出一个名为 召回用户黑名单.xls 的Excel文件：</p>
+<pre><code>composer require maatwebsite/excel ~2.0.0
+</code></pre><p>安装后的设置<br>在 config/app.php 中注册服务提供者到 providers 数组：</p>
+<pre><code>Maatwebsite\Excel\ExcelServiceProvider::class,
+</code></pre><p>同样在 config/app.php 中注册门面到 aliases 数组：</p>
+<pre><code>&#39;Excel&#39; =&gt; Maatwebsite\Excel\Facades\Excel::class,
+</code></pre><p>如果想要对Laravel Excel进行更多的自定义配置，执行如下Artisan命令，执行成功后会在 config 目录下生成一个配置文件 excel.php 。</p>
+<pre><code>php artisan vendor:publish
+</code></pre><h1 id="3、导出Excel文件"><a href="#3、导出Excel文件" class="headerlink" title="3、导出Excel文件"></a>3、导出Excel文件</h1><p>为了演示Laravel Excel相关功能，我们为本测试创建一个干净的控制器 ExcelController.php ：</p>
+<pre><code>php artisan make:controller ExcelController --plain
+</code></pre><p>然后在 web.php 中定义相关路由：</p>
+<pre><code>$router-&gt;get(&#39;excel/export&#39;,&#39;ExcelController@export&#39;);
+$router-&gt;get(&#39;excel/import&#39;,&#39;ExcelController@import&#39;);
+</code></pre><pre><code>&lt;?php
+namespace App\Http\Controllers\Api;
+use DB;
+use Excel;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+class ExcelController extends Controller
+{
+    Excel文件导出功能
+    public function export()
+    {
+    $info = DB::table(&#39;dtsz&#39;)
+        -&gt;select(&#39;id&#39;, &#39;name&#39;, &#39;phone&#39;, &#39;yiyuan&#39;, &#39;dlsname&#39;, &#39;pname&#39;, &#39;addtime&#39;, &#39;logintime&#39;)
+        -&gt;get();
+    $cellData = [
+        [&#39;共&#39;.count($info).&#39;条&#39;],
+        [&#39; &#39;,&#39;姓名&#39;, &#39;电话&#39;, &#39;所在医院&#39;, &#39;推荐人&#39;, &#39;所在地区&#39;, &#39;注册日期&#39;, &#39;最后登录日期&#39;, &#39;总计登录天数&#39;, &#39;转诊病人数(含新转诊)&#39;, &#39;总计提现金额(含未审核)&#39;, &#39;剩余积分(含未审核)&#39;],
+    ];
+    foreach ($info as $k =&gt; $v) {
+        $count  = DB::table(&#39;patients&#39;)-&gt;where(&#39;uid&#39;, $v-&gt;id)-&gt;count();
+        $get    = DB::table(&#39;jifenlog&#39;)-&gt;where(&#39;uid&#39;, $v-&gt;id)-&gt;where(&#39;sztype&#39;, 0)-&gt;select(DB::raw(&#39;SUM(jifen) as total_sales&#39;))-&gt;first();
+        $out    = DB::table(&#39;jifenlog&#39;)-&gt;where(&#39;uid&#39;, $v-&gt;id)-&gt;where(&#39;sztype&#39;, 1)-&gt;select(DB::raw(&#39;SUM(jifen) as total_sales&#39;))-&gt;first();
+        $cellData[$k + 2][] = $k + 1;
+        $cellData[$k + 2][] = $v-&gt;name ? $v-&gt;name : &#39;&#39;;
+        $cellData[$k + 2][] = $v-&gt;phone ? $v-&gt;phone : &#39;&#39;;
+        $cellData[$k + 2][] = $v-&gt;yiyuan ? $v-&gt;yiyuan : &#39;&#39;;
+        $cellData[$k + 2][] = $v-&gt;dlsname ? $v-&gt;dlsname : &#39;&#39;;
+        $cellData[$k + 2][] = $v-&gt;pname ? $v-&gt;pname : &#39;&#39;;
+        $cellData[$k + 2][] = date(&#39;Y-m-d H:i:s&#39;, $v-&gt;addtime);
+        $cellData[$k + 2][] = date(&#39;Y-m-d H:i:s&#39;, $v-&gt;logintime);
+        $cellData[$k + 2][] = $v-&gt;day = 0;
+        $cellData[$k + 2][] = $v-&gt;count_human = $count;
+        $cellData[$k + 2][] = $v-&gt;count_sum = $get-&gt;total_sales ? $get-&gt;total_sales : 0;
+        $cellData[$k + 2][] = $out-&gt;total_sales ? $out-&gt;total_sales : 0;
+    }
+    Excel::create(&#39;召回用户黑名单&#39;, function ($excel) use ($cellData) {
+        $excel-&gt;sheet(&#39;score&#39;, function ($sheet) use ($cellData) {
+            $sheet-&gt;rows($cellData);
+        });
+    })-&gt;export(&#39;xls&#39;);
+    }
+}
+</code></pre><p>我们在浏览器中访问 <a href="http://localhost:8000/excel/export" target="_blank" rel="external">http://localhost:8000/excel/export</a> ，会导出一个名为 召回用户黑名单.xls 的Excel文件：</p>
 <p><img src="http://oe2qf8as1.bkt.clouddn.com/854F.tm.png" alt="111"></p>
 <p>如果你要导出csv或者xlsx文件，只需将 export 方法中的参数改成csv或xlsx即可。<br>如果还要将该Excel文件保存到服务器上，可以使用 store 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Excel::create(&apos;召回用户黑名单&apos;,function($excel) use ($cellData)&#123;</div><div class="line">     $excel-&gt;sheet(&apos;score&apos;, function($sheet) use ($cellData)&#123;</div><div class="line">         $sheet-&gt;rows($cellData);</div><div class="line">     &#125;);</div><div class="line">&#125;)-&gt;store(&apos;xls&apos;)-&gt;export(&apos;xls&apos;);</div></pre></td></tr></table></figure>
-<p>文件默认保存到 storage/exports 目录下，如果出现文件名中文乱码，将上述代码文件名做如下修改即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iconv(&apos;UTF-8&apos;, &apos;GBK&apos;, &apos;召回用户黑名单&apos;)</div></pre></td></tr></table></figure>
-<h1 id="4、导入Excel文件"><a href="#4、导入Excel文件" class="headerlink" title="4、导入Excel文件"></a>4、导入Excel文件</h1><p>我们将刚才保存到服务器上的Excel文件导入进来，导入很简单，使用 Excel 门面上的 load 方法即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Excel文件导入功能  </div><div class="line">public function import()&#123;</div><div class="line">    $filePath = &apos;storage/exports/&apos;.iconv(&apos;UTF-8&apos;, &apos;GBK&apos;, &apos;召回用户黑名单&apos;).&apos;.xls&apos;;</div><div class="line">    Excel::load($filePath, function($reader) &#123;</div><div class="line">        $data = $reader-&gt;all();</div><div class="line">        dd($data);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>load 方法基于项目根路径作为根目录，同样我们对中文进行了转码，否则会提示文件不存在。<br>在浏览器中访问 <a href="http://localhost:8000/excel/import" target="_blank" rel="external">http://localhost:8000/excel/import</a> ，页面显示如下：</p>
+<pre><code>Excel::create(&#39;召回用户黑名单&#39;,function($excel) use ($cellData){
+     $excel-&gt;sheet(&#39;score&#39;, function($sheet) use ($cellData){
+         $sheet-&gt;rows($cellData);
+     });
+})-&gt;store(&#39;xls&#39;)-&gt;export(&#39;xls&#39;);
+</code></pre><p>文件默认保存到 storage/exports 目录下，如果出现文件名中文乱码，将上述代码文件名做如下修改即可：</p>
+<pre><code>iconv(&#39;UTF-8&#39;, &#39;GBK&#39;, &#39;召回用户黑名单&#39;)
+</code></pre><h1 id="4、导入Excel文件"><a href="#4、导入Excel文件" class="headerlink" title="4、导入Excel文件"></a>4、导入Excel文件</h1><p>我们将刚才保存到服务器上的Excel文件导入进来，导入很简单，使用 Excel 门面上的 load 方法即可：</p>
+<pre><code>Excel文件导入功能  
+public function import(){
+    $filePath = &#39;storage/exports/&#39;.iconv(&#39;UTF-8&#39;, &#39;GBK&#39;, &#39;召回用户黑名单&#39;).&#39;.xls&#39;;
+    Excel::load($filePath, function($reader) {
+        $data = $reader-&gt;all();
+        dd($data);
+    });
+}
+</code></pre><p>load 方法基于项目根路径作为根目录，同样我们对中文进行了转码，否则会提示文件不存在。<br>在浏览器中访问 <a href="http://localhost:8000/excel/import" target="_blank" rel="external">http://localhost:8000/excel/import</a> ，页面显示如下：</p>
 <p>当然，Laravel Excel还有很多其它功能，比如将Blade视图导出为Excel或CSV，以及对导入/导出更加细粒度的控制，具体可参考其官方文档： <a href="http://www.maatwebsite.nl/laravel-excel/docs" target="_blank" rel="external">http://www.maatwebsite.nl/laravel-excel/docs</a></p>
 
       
@@ -619,7 +672,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -630,7 +683,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

@@ -444,10 +444,22 @@
         <p>很多人在学习活面试的时候会听到这样的问题：Mysql的左链接和右链接有什么区别？</p>
 <p>简单的理解：<br>    左连接: 左表所有与右表满足条件的<br>    右连接: 右表所有与左表满足条件的<br><a id="more"></a></p>
 <p>例子，相信你一看就明白，不需要多说 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">A表(a1,b1,c1)        B表(a2,b2) </div><div class="line">a1 b1 c1               a2 b2 </div><div class="line">01 数学 95              01 张三 </div><div class="line">02 语文 90              02 李四 </div><div class="line">03 英语 80              04 王五</div><div class="line">``` </div><div class="line"></div><div class="line">左链接</div><div class="line">`select A.*,B.* from A left outer join B on(A.a1=B.a2)`</div><div class="line">结果是:</div></pre></td></tr></table></figure>
-<p>a1 b1 c1 a2 b2<br>01 数学 95 01 张三<br>02 语文 90 02 李四<br>03 英语 80 NULL NULL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">右链接</div><div class="line">`select A.*,B.* from A right outer join B on(A.a1=B.a2)`</div><div class="line">结果是:</div></pre></td></tr></table></figure></p>
-<p>a1 b1 c1 a2 b2<br>01 数学 95 01 张三<br>02 语文 90 02 李四<br>NULL NULL NULL 04 王五<br>```</p>
-
+<pre><code>A表(a1,b1,c1)        B表(a2,b2) 
+a1 b1 c1               a2 b2 
+01 数学 95              01 张三 
+02 语文 90              02 李四 
+03 英语 80              04 王五
+</code></pre><p>左链接<br><code>select A.*,B.* from A left outer join B on(A.a1=B.a2)</code><br>结果是: </p>
+<pre><code>a1 b1 c1 a2 b2 
+01 数学 95 01 张三 
+02 语文 90 02 李四 
+03 英语 80 NULL NULL
+</code></pre><p>右链接<br><code>select A.*,B.* from A right outer join B on(A.a1=B.a2)</code><br>结果是: </p>
+<pre><code>a1 b1 c1 a2 b2 
+01 数学 95 01 张三 
+02 语文 90 02 李四 
+NULL NULL NULL 04 王五
+</code></pre>
       
     </div>
     
@@ -588,7 +600,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -599,7 +611,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

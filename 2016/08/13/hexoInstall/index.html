@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo1npm install -g hexo-cli 4.正式的旅程碑123hexo init &amp;lt;folder&amp;gt;cd &amp;lt;folder&amp;gt;npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME的文件，">
+<meta name="description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo     npm install -g hexo-cli 4.正式的旅程碑 hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo折腾日记">
 <meta property="og:url" content="http://chailong.github.io/2016/08/13/hexoInstall/index.html">
 <meta property="og:site_name" content="韩月">
-<meta property="og:description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo1npm install -g hexo-cli 4.正式的旅程碑123hexo init &amp;lt;folder&amp;gt;cd &amp;lt;folder&amp;gt;npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME的文件，">
+<meta property="og:description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo     npm install -g hexo-cli 4.正式的旅程碑 hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-24T21:02:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo折腾日记">
-<meta name="twitter:description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo1npm install -g hexo-cli 4.正式的旅程碑123hexo init &amp;lt;folder&amp;gt;cd &amp;lt;folder&amp;gt;npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME的文件，">
+<meta name="twitter:description" content="1.安装git和node.js 安装自行百度2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理 3.安装hexo     npm install -g hexo-cli 4.正式的旅程碑 hexo init &amp;lt;folder&amp;gt; cd &amp;lt;folder&amp;gt; npm install 5.如何发布GitHub上    1）在source目录学新建一个没有后缀名名为CNAME">
 
 
 
@@ -419,15 +419,24 @@
 
       
         <p>1.安装git和node.js 安装自行百度<br>2.如果您的计算机已经有这些，恭喜！只要安装Hexo新公共管理</p>
-<p>3.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>4.正式的旅程碑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line">cd &lt;folder&gt;</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p>5.如何发布GitHub上<br>    1）在source目录学新建一个没有后缀名名为CNAME的文件，在里面写入你的域名（不带www）<br>    2）解析你的域名到GitHub上的仓库名称xxx.github.io （自行百度）<br>    3）修改hexo目录下站点配置文件找到deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">			type: git</div><div class="line">			repository: https://github.com/sonny/sonny.github.io.git</div><div class="line">			branch: master</div></pre></td></tr></table></figure></p>
-<pre><code>*注意这里的repository填写你的仓库地址，这里是我的*
-4）你的项目根目下运行发布命令
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure>
-<pre><code>5）搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:git 的错误:
-</code></pre><p>解决方法1.<br>        将第3步的type值改为：type: github<br>解决方法2。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>6.其余详细教程请参考<a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p>
+<p>3.安装hexo</p>
+<pre><code>    npm install -g hexo-cli
+</code></pre><p>4.正式的旅程碑</p>
+<pre><code>hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+npm install
+</code></pre><p>5.如何发布GitHub上<br>    1）在source目录学新建一个没有后缀名名为CNAME的文件，在里面写入你的域名（不带www）<br>    2）解析你的域名到GitHub上的仓库名称xxx.github.io （自行百度）<br>    3）修改hexo目录下站点配置文件找到deploy</p>
+<pre><code>        deploy:
+              type: git
+              repository: https://github.com/sonny/sonny.github.io.git
+              branch: master
+</code></pre><pre><code> *注意这里的repository填写你的仓库地址，这里是我的*
+ 4）你的项目根目下运行发布命令
+</code></pre><pre><code>        hexo g -d
+</code></pre><pre><code>5）搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:git 的错误:
+</code></pre><p>解决方法1.<br>        将第3步的type值改为：type: github<br>解决方法2。</p>
+<pre><code>    npm install hexo-deployer-git --save
+</code></pre><p>6.其余详细教程请参考<a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a></p>
 
       
     </div>
@@ -559,7 +568,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -570,7 +579,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="韩月">
 <meta property="og:description" content="有这样一种需求，在本地开发，然后push到服务器上，并且自动同步到web站点目录，这样就可以直接看到网页效果了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-24T21:07:02.000Z">
+<meta property="og:updated_time" content="2017-09-25T12:29:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git推送到服务器自动同步到站点目录">
 <meta name="twitter:description" content="有这样一种需求，在本地开发，然后push到服务器上，并且自动同步到web站点目录，这样就可以直接看到网页效果了。">
@@ -452,12 +452,19 @@
 <li>本地推送</li>
 <li>裸版本库接收到推送内容后自动检出到web目录实现同步</li>
 </ul>
-<h2 id="创建裸版本库："><a href="#创建裸版本库：" class="headerlink" title="创建裸版本库："></a>创建裸版本库：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@localhost]$ mkdir /home/workspace</div><div class="line">[root@localhost]$ cd /home/workspace</div><div class="line">[root@localhost]$ git init -bare wwwroot.git</div></pre></td></tr></table></figure>
-<h2 id="创建web目录："><a href="#创建web目录：" class="headerlink" title="创建web目录："></a>创建web目录：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost]$ mkdir -p /home/website/wwwroot</div></pre></td></tr></table></figure>
-<p><del>暂时不需要</del><br><del><strong>本地</strong>初始化一个版本库</del><br><del>[root@admin.pc]$ cd e:</del><br><del>[root@admin.pc]$ git init local.git</del><br><del>暂时不需要</del></p>
-<h2 id="使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。"><a href="#使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。" class="headerlink" title="使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。"></a>使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@admin.pc e:/local.git/]$ git clone ssh://root@xxx.xxx.x/home/workspace/wwwroot.git</div></pre></td></tr></table></figure>
-<h2 id="设置钩子"><a href="#设置钩子" class="headerlink" title="设置钩子"></a>设置钩子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[root@localhost]$ cd /home/workspace/wwwroot.git/hooks</div><div class="line">[root@localhost]$ cat &gt; post-receive &lt;&lt;EOF</div><div class="line">&gt;#!/bin/bash</div><div class="line">&gt;git --work-tree=/home/website/wwwroot checkout -f </div><div class="line">&gt;EOF</div><div class="line">[root@localhost]$ chmod +x post-receive</div></pre></td></tr></table></figure>
-<p>在服务器裸版本库目录下有一个hooks目录，进去后添加一个post-receive的文件，将上面&gt;开头的几行代码输进去，可以用vi，我这里用的cat，保存后记得使用chmod将这个文件赋予可执行权限，成为一个shell脚本。其中 –work-tree对应站点文件目录。</p>
+<h2 id="创建裸版本库："><a href="#创建裸版本库：" class="headerlink" title="创建裸版本库："></a>创建裸版本库：</h2><pre><code>[root@localhost]$ mkdir /home/workspace
+[root@localhost]$ cd /home/workspace
+[root@localhost]$ git init -bare wwwroot.git
+</code></pre><h2 id="创建web目录："><a href="#创建web目录：" class="headerlink" title="创建web目录："></a>创建web目录：</h2><pre><code>[root@localhost]$ mkdir -p /home/website/wwwroot
+</code></pre><p><del>暂时不需要</del><br><del><strong>本地</strong>初始化一个版本库</del><br><del>[root@admin.pc]$ cd e:</del><br><del>[root@admin.pc]$ git init local.git</del><br><del>暂时不需要</del></p>
+<h2 id="使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。"><a href="#使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。" class="headerlink" title="使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。"></a>使用ssh协议从服务器上克隆裸版本库内容，这里如果没有配置公钥的话，会提示输入密码。</h2><pre><code>[root@admin.pc e:/local.git/]$ git clone ssh://root@xxx.xxx.x/home/workspace/wwwroot.git
+</code></pre><h2 id="设置钩子"><a href="#设置钩子" class="headerlink" title="设置钩子"></a>设置钩子</h2><pre><code>[root@localhost]$ cd /home/workspace/wwwroot.git/hooks
+[root@localhost]$ cat &gt; post-receive &lt;&lt;EOF
+&gt;#!/bin/bash
+&gt;git --work-tree=/home/website/wwwroot checkout -f 
+&gt;EOF
+[root@localhost]$ chmod +x post-receive
+</code></pre><p>在服务器裸版本库目录下有一个hooks目录，进去后添加一个post-receive的文件，将上面&gt;开头的几行代码输进去，可以用vi，我这里用的cat，保存后记得使用chmod将这个文件赋予可执行权限，成为一个shell脚本。其中 –work-tree对应站点文件目录。</p>
 <p>第一次push可能会有一些提示，因为裸版本库还什么都没有，你可能需要 git push origin master写全命令，之后就没必要了。</p>
 
       
@@ -611,7 +618,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -622,7 +629,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

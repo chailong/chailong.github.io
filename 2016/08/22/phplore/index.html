@@ -444,8 +444,10 @@
         <h1 id="php必须掌握的基础知识"><a href="#php必须掌握的基础知识" class="headerlink" title="php必须掌握的基础知识"></a>php必须掌握的基础知识</h1><p>PHP的数据类型<br>字符串（string） 整形（integer） 浮点型（float或者double） 布尔型（boolean） 数组（Array） 对象（Object） 资源（Resource）</p>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>页面中需要显示的文字，在PHP代码中我们使用单引号或者双引号包含 作为一些技巧性的使用，如果字符串中含有单引号，那么字符串可以使用双引号包含 $var = “‘foo’”; 同理，如果字符串中含有双引号，则可以使用单引号包含 $var = ‘”bar”‘; 如果双引号包含的字符串中要显示双引号，或者单引号包含的字符串中要显示单引号，我们可以添加转义符（一个斜杠\） $var = ‘\’foo\”;$var = “\”bar\””;</p>
 <h2 id="单引号和双引号"><a href="#单引号和双引号" class="headerlink" title="单引号和双引号"></a>单引号和双引号</h2><p>PHP中字符串使用单引号还是双引号并没有严格的约定 实际上，引号是可以随意使用的，只要注意不要混用，引号必须配对即可 唯一的不同就是变量的问题，双引号中可以直接将变量转换为值，而单引号不行，请问下面的代码会输出什么？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$name = “andy”;</div><div class="line">echo ‘my name is $name’;</div><div class="line">echo “my name is $name”;</div></pre></td></tr></table></figure>
-<p>PHP初学者最容易犯的一个错误就是忘记给文字加引号 “hello” 这是字符串 $hello 这是变量 hello 系统会认为这是一个常量<br>常见的十进制整型我们无需多说 $var = 100; // 使用var_dump输出是int(100) 另外，在PHP中，我们还可以设置其他进制的整型</p>
+<pre><code>$name = “andy”;
+echo ‘my name is $name’;
+echo “my name is $name”;
+</code></pre><p>PHP初学者最容易犯的一个错误就是忘记给文字加引号 “hello” 这是字符串 $hello 这是变量 hello 系统会认为这是一个常量<br>常见的十进制整型我们无需多说 $var = 100; // 使用var_dump输出是int(100) 另外，在PHP中，我们还可以设置其他进制的整型</p>
 <h2 id="运算与赋值"><a href="#运算与赋值" class="headerlink" title="运算与赋值"></a>运算与赋值</h2><p>简单的说就是我们平时常用的加减乘除运算，我们下面会重点介绍一下浮点数加减的问题，%的使用场合，以及++和—的使用</p>
 <ul>
 <li>加法运算<br>–    减法运算</li>
@@ -456,9 +458,9 @@
 <h2 id="比较运算符-1"><a href="#比较运算符-1" class="headerlink" title="比较运算符"></a>比较运算符</h2><p>基本的比较运算符我们不用多介绍，下面介绍一种比较特殊的比较运算符：恒等。在判断值是否相等的前提下，还会判断类型是否一样<br>运算符    功能    说明<br>===    恒等    运算符左右两边表达式的值相等并且类型一样，返回true<br>!==    非恒等    运算符左右两边表达式的值不相等或者类型不一样，返回true<br>在PHP中，下面所有的值都表示空：null、false、array()、””、0、”0″。 如果使用==，则 null == false、0 == “0”、null== array()、false == “”……都是返回true，而使用===则会返回false</p>
 <h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算有点类似前面讲过的位运算的方式，但逻辑运算更侧重在程序书写和日常开发中使用，比如 if switch 语句等。PHP提供了逻辑与、或、异或、非等逻辑运算符。<br>AND    逻辑与    当所有表达式为true时，返回true，否则返回false<br>OR    逻辑或    当所有表达式为false时，返回false，否则返回true<br>XOR    逻辑异或    只有一个表达式为true时，返回true，否则返回false<br>&amp;&amp;    逻辑与    当所有表达式为true时，返回true，否则返回false<br>||    逻辑或    当所有表达式为false时，返回false，否则返回true<br>!    逻辑非    当表达式为true时返回false，反之返回true<br>假设： $x = 8; $y = 6; 那么： $x + $y &gt; 10; // 返回的是真$x – $y &lt; 0; // 返回的是假 把两个比较运算放在一起进行逻辑运算的结果是什么？ $result = ($x + $y &gt; 10) &amp;&amp; ($x – $y &lt; 0);$result = ($x + $y &gt; 10) || ($x – $y &lt; 0);$result = !($x – $y &lt; 0);</p>
 <h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><p>简单的IF语句由两部分组成，expr是我们的表达式，而statement是我们需要执行的代码；当expr为true的时候，statement被执行；反之，则被忽略 if (expr) statement expr必须放在一对圆括号中间<br>if ($dir == ‘west’)<br>echo ‘西’;<br>还是前面的代码，我么稍作修改，执行的结果应该是什么？<br>$dir = ‘east’; if ($dir == ‘west’)  {<br>echo ‘当前方向为’;<br>} else {<br>echo ‘西’;<br>}<br>有时候我们不仅仅需要判断当expr条件为true时执行什么语句，另外，当expr条件为false时需要执行什么 if ($dir == ‘west’) {    echo ‘西’;} else {    echo ‘其它方向’;}</p>
-<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><p>PHP有一个特殊的运算符，我们在之前学习运算符的时候并没有介绍，在学习了if和else语句后，我们可以介绍了 <figure class="highlight plain"><figcaption><span>? (expr2) : (expr3)``` 当expr1条件为真时，值为expr2，否则值为expr3 下面的代码可以代替前面的```if else```语句 ```echo $dir </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">多个条件组合</div></pre></td></tr></table></figure></p>
-<p>if ($dir == ‘west’) {        echo “西”;} else {    if ($dir == ‘east’) {        echo “东”;    } else {        if ($dir == ‘north’) {            echo “北”;        } else {            if ($dir == ‘sourth’) {                echo “南”;            } else {                echo “未知”;            }        }    }}<br>```</p>
-<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><p>switch 语句类似于具有同一个表达式的一系列 if 语句 每个case会依次判断，expr与expr1..n是否相等，如果相等则执行对应的statement，如果最后有break，则执行完成后跳出switch语句 default是在所有case都无法满足的情况下默认执行的操作<br>switch (expr) { case expr1: statement; break; case expr2: statement; break; …… default: statement; }</p>
+<h2 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h2><p>PHP有一个特殊的运算符，我们在之前学习运算符的时候并没有介绍，在学习了if和else语句后，我们可以介绍了 <code>(expr1) ? (expr2) : (expr3)</code> 当expr1条件为真时，值为expr2，否则值为expr3 下面的代码可以代替前面的<code>if else</code>语句 <code>echo $dir == ‘west’ ? ‘西’ : ‘其它方向’;</code><br>多个条件组合</p>
+<pre><code>if ($dir == ‘west’) {        echo “西”;} else {    if ($dir == ‘east’) {        echo “东”;    } else {        if ($dir == ‘north’) {            echo “北”;        } else {            if ($dir == ‘sourth’) {                echo “南”;            } else {                echo “未知”;            }        }    }}
+</code></pre><h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><p>switch 语句类似于具有同一个表达式的一系列 if 语句 每个case会依次判断，expr与expr1..n是否相等，如果相等则执行对应的statement，如果最后有break，则执行完成后跳出switch语句 default是在所有case都无法满足的情况下默认执行的操作<br>switch (expr) { case expr1: statement; break; case expr2: statement; break; …… default: statement; }</p>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组提供了一种快速，方便地管理一组相关数据的方法，是php程序设计中的重要内容。 php中将数组分为一维数组，二维数组和多维数组，但无论是一维还是多维，可以统一将数组分为数字索引数组和关联数组两种。</p>
 <h2 id="索引数组"><a href="#索引数组" class="headerlink" title="索引数组"></a>索引数组</h2><p>这是最常见的数组类型，绝大多数编程语言都有数字索引数组 我们可以使用array()来初始化数组，每个数组元素之间使用逗号分隔 $names = array();$names = array(‘andy’, ‘tom’, ‘jack’);<br>第一个是一个空数组，第二个数组的元素个数是3 PHP 5.4之后，数组的初始化可以使用更简洁的方式 $names = [];$names = [‘andy’, ‘tom’, ‘jack’];</p>
 <h2 id="count函数"><a href="#count函数" class="headerlink" title="count函数"></a>count函数</h2><p>我们可以使用count函数来统计数组中元素的个数 int count ( mixed $var [, int $mode = COUNT_NORMAL ] ) echo count($names); 第二跟个参数，我们会在介绍数组维度时学习</p>
@@ -621,7 +623,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -632,7 +634,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

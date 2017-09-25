@@ -444,54 +444,145 @@
         <h1 id="Laravel-安装"><a href="#Laravel-安装" class="headerlink" title="Laravel 安装"></a>Laravel 安装</h1><p>1.下载<a href="https://getcomposer.org" target="_blank" rel="external">composer 官网</a><br>2.<code>mv composer.pr /usr/local/bin/composr</code><br>3.<code>laravel new blog</code> 或 <code>composer create-project --prefer-dist laravel/laracel Laravel5</code><br>4.使用 <code>php artisna serve</code> 来启动 laravel 框架<br><a id="more"></a></p>
 <h1 id="Laravel-基本工作流程"><a href="#Laravel-基本工作流程" class="headerlink" title="Laravel 基本工作流程"></a>Laravel 基本工作流程</h1><p>routes 路由文件：<br>你可以想象成为专门处理http请求的，比如get、post等。</p>
 <p>以前访问页面都是某个文件夹下面某个PHP文件 访问地址如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">images/index.php</div><div class="line">或</div><div class="line">www.xxx.com/images/index.php</div></pre></td></tr></table></figure>
-<p>打开 routes/web.php 你会发现里面有三行代码，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(&apos;/&apos;, function () &#123;</div><div class="line">    return view(&apos;welcome&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>在Laravel中 你会神奇的发现这是一条get 请求 「／」 目录 下一个匿名方法。<br>你可以将匿名函数内容改为  <code>return &#39;Hello world&#39;</code> 保存 ，访问 <a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> </p>
+<pre><code>images/index.php
+或
+www.xxx.com/images/index.php
+</code></pre><p>打开 routes/web.php 你会发现里面有三行代码，</p>
+<pre><code>Route::get(&#39;/&#39;, function () {
+    return view(&#39;welcome&#39;);
+});
+</code></pre><p>在Laravel中 你会神奇的发现这是一条get 请求 「／」 目录 下一个匿名方法。<br>你可以将匿名函数内容改为  <code>return &#39;Hello world&#39;</code> 保存 ，访问 <a href="http://127.0.0.1:8000" target="_blank" rel="external">http://127.0.0.1:8000</a> </p>
 <p>你会发现每次访问都要写一个匿名函数，我们通常会采取 Controller控制器 来访问。<br>下面我们来创建 Controller控制器 ，首先要使用 <strong>终端</strong> 进入你的项目根目录。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">php artisan make:controller NameController    # 创建一个不带方法的路由</div><div class="line"></div><div class="line">php artisan make:controller NameController --resource #创建一个带方法的路由</div></pre></td></tr></table></figure>
-<p>⚠️ 控制器的默认目录放在 app/Http/Controller 下</p>
+<pre><code>php artisan make:controller NameController    # 创建一个不带方法的路由
+
+php artisan make:controller NameController --resource #创建一个带方法的路由
+</code></pre><p>⚠️ 控制器的默认目录放在 app/Http/Controller 下</p>
 <p>打开刚刚创建的 控制器 在里面如下方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public function index()</div><div class="line">&#123;</div><div class="line">    return view(&apos;welcome&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们修改 <code>routes/web.php</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Route::get(&apos;/&apos;,&apos;NameController@index&apos;);</div><div class="line"></div><div class="line">//$router-&gt;get( &apos;/&apos; , &apos;NameController@index&apos; );</div><div class="line"></div><div class="line">//Route::resource(&apos;／&apos;, &apos;PhotoController&apos;); #我们在后面会讲解到，不要在这里纠结这是什么意思</div></pre></td></tr></table></figure>
-<p>⚠️ 上面2行代码是等效的。</p>
+<pre><code>public function index()
+{
+    return view(&#39;welcome&#39;);
+}
+</code></pre><p>我们修改 <code>routes/web.php</code></p>
+<pre><code> Route::get(&#39;/&#39;,&#39;NameController@index&#39;);
+
+ //$router-&gt;get( &#39;/&#39; , &#39;NameController@index&#39; );
+
+ //Route::resource(&#39;／&#39;, &#39;PhotoController&#39;); #我们在后面会讲解到，不要在这里纠结这是什么意思
+</code></pre><p>⚠️ 上面2行代码是等效的。</p>
 <p>打开浏览器访问 <a href="http://127.0.0.1:80" target="_blank" rel="external">http://127.0.0.1:80</a> 你会惊奇的发现页面没有变化</p>
 <h1 id="Laravel向视图传递变量"><a href="#Laravel向视图传递变量" class="headerlink" title="Laravel向视图传递变量"></a>Laravel向视图传递变量</h1><p>这里 「name」是发送给视图的变量，「$name」是变量值</p>
-<h3 id="单个变量"><a href="#单个变量" class="headerlink" title="单个变量"></a>单个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return vier(&apos;about.about&apos;)-&gt;with(&apos;name&apos;,$name);</div></pre></td></tr></table></figure>
-<h3 id="多个变量"><a href="#多个变量" class="headerlink" title="多个变量"></a>多个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#方法1:</div><div class="line">return vier(&apos;about.about&apos;)-&gt;with([</div><div class="line">    &apos;first&apos;=&gt; &apos;one&apos;,</div><div class="line">    &apos;last&apos;=&gt; &apos;two&apos;</div><div class="line">]);     </div><div class="line"></div><div class="line"></div><div class="line">#方法2:</div><div class="line">$array=[];</div><div class="line">$array[&apos;farst&apos;]= &apos;one&apos;;</div><div class="line">$array[&apos;lost&apos;]= &apos;two&apos;;</div><div class="line">return vier(&apos;about.about&apos;,$array);</div></pre></td></tr></table></figure>
-<h3 id="多个或单个变量"><a href="#多个或单个变量" class="headerlink" title="多个或单个变量"></a>多个或单个变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$first= &apos;one&apos;;</div><div class="line">$lost= &apos;two&apos;;</div><div class="line">return view(&apos;about.about&apos;,compact(&apos;first&apos;,&apos;lost&apos;)); # 个人倾向</div></pre></td></tr></table></figure>
-<p>在模板中使用变量 </p>
+<h3 id="单个变量"><a href="#单个变量" class="headerlink" title="单个变量"></a>单个变量</h3><pre><code>return vier(&#39;about.about&#39;)-&gt;with(&#39;name&#39;,$name);
+</code></pre><h3 id="多个变量"><a href="#多个变量" class="headerlink" title="多个变量"></a>多个变量</h3><pre><code>#方法1:
+return vier(&#39;about.about&#39;)-&gt;with([
+    &#39;first&#39;=&gt; &#39;one&#39;,
+    &#39;last&#39;=&gt; &#39;two&#39;
+]);     
+
+
+#方法2:
+$array=[];
+$array[&#39;farst&#39;]= &#39;one&#39;;
+$array[&#39;lost&#39;]= &#39;two&#39;;
+return vier(&#39;about.about&#39;,$array);
+</code></pre><h3 id="多个或单个变量"><a href="#多个或单个变量" class="headerlink" title="多个或单个变量"></a>多个或单个变量</h3><pre><code>$first= &#39;one&#39;;
+$lost= &#39;two&#39;;
+return view(&#39;about.about&#39;,compact(&#39;first&#39;,&#39;lost&#39;)); # 个人倾向
+</code></pre><p>在模板中使用变量 </p>
 <blockquote>
 <p>传统写法：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;?php $name ?&gt;</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>&lt;?php $name ?&gt;
+</code></pre><blockquote>
 <p>laravel写法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; $name &#125;&#125;   #会转义变量</div><div class="line"></div><div class="line">&#123;!! $name !!&#125;  #不会转义变量 注意xss攻击</div></pre></td></tr></table></figure>
-<h1 id="Laravel-Blade-模板简介"><a href="#Laravel-Blade-模板简介" class="headerlink" title="Laravel Blade 模板简介"></a>Laravel Blade 模板简介</h1><p>比如我们需要新建一个页面，考虑页面CSS一至性，每次都要 cp ？ ❌<br>其实网们可以这样做 在 views/目录下新建 app.blade.php </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;&lt;/title&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/style.css&quot;/&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/external.min.css&quot;/&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">@yield(&apos;content&apos;) #重点在这里  设置一块content缓冲区</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>其他html页面可以删除body以上代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@extends(&apos;app&apos;)  #继承刚才新建的app.blade.php</div><div class="line"></div><div class="line">@section(&apos;content&apos;)  #创建一块content缓冲区</div><div class="line">    #body正文</div><div class="line">@stop #一个section对应1个stop</div></pre></td></tr></table></figure></p>
-<p>⚠️ 如果一个页面西药特定文件怎么办 没错就是在创建一块缓冲区</p>
+<pre><code>{{ $name }}   #会转义变量
+
+{!! $name !!}  #不会转义变量 注意xss攻击
+</code></pre><h1 id="Laravel-Blade-模板简介"><a href="#Laravel-Blade-模板简介" class="headerlink" title="Laravel Blade 模板简介"></a>Laravel Blade 模板简介</h1><p>比如我们需要新建一个页面，考虑页面CSS一至性，每次都要 cp ？ ❌<br>其实网们可以这样做 在 views/目录下新建 app.blade.php </p>
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/style.css&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style/css/external.min.css&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+@yield(&#39;content&#39;) #重点在这里  设置一块content缓冲区
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>其他html页面可以删除body以上代码</p>
+<pre><code>@extends(&#39;app&#39;)  #继承刚才新建的app.blade.php
+
+@section(&#39;content&#39;)  #创建一块content缓冲区
+    #body正文
+@stop #一个section对应1个stop
+</code></pre><p>⚠️ 如果一个页面西药特定文件怎么办 没错就是在创建一块缓冲区</p>
 <p>这个你学会了，在来的新技能吧！</p>
-<h2 id="在模版中使用条件-循环"><a href="#在模版中使用条件-循环" class="headerlink" title="在模版中使用条件 循环"></a>在模版中使用条件 循环</h2><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@if(true)</div><div class="line">    &lt;h1&gt; true &lt;/h1&gt;</div><div class="line">@else</div><div class="line">    flast</div><div class="line">@endif</div></pre></td></tr></table></figure>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@foreach($array as $key) </div><div class="line">    &#123;&#123; $key &#125;&#125;</div><div class="line">@endforeach</div></pre></td></tr></table></figure>
-<h1 id="Laravel环境配置-env"><a href="#Laravel环境配置-env" class="headerlink" title="Laravel环境配置.env"></a>Laravel环境配置.env</h1><p>env(‘.env名称’,’默认值’)</p>
+<h2 id="在模版中使用条件-循环"><a href="#在模版中使用条件-循环" class="headerlink" title="在模版中使用条件 循环"></a>在模版中使用条件 循环</h2><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><pre><code>@if(true)
+    &lt;h1&gt; true &lt;/h1&gt;
+@else
+    flast
+@endif
+</code></pre><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><pre><code>@foreach($array as $key) 
+    {{ $key }}
+@endforeach
+</code></pre><h1 id="Laravel环境配置-env"><a href="#Laravel环境配置-env" class="headerlink" title="Laravel环境配置.env"></a>Laravel环境配置.env</h1><p>env(‘.env名称’,’默认值’)</p>
 <h1 id="美化phpstorm"><a href="#美化phpstorm" class="headerlink" title="美化phpstorm"></a>美化phpstorm</h1><p><a href="https://www.laravist.com/series/phpstorm-the-best-php-ide-you-ever-met/episodes/2" target="_blank" rel="external">https://www.laravist.com/series/phpstorm-the-best-php-ide-you-ever-met/episodes/2</a></p>
 <h1 id="mac终端美化："><a href="#mac终端美化：" class="headerlink" title="mac终端美化："></a>mac终端美化：</h1><h2 id="安装「oh-my-zsh」可以自动安装也可以手动安装"><a href="#安装「oh-my-zsh」可以自动安装也可以手动安装" class="headerlink" title="安装「oh my zsh」可以自动安装也可以手动安装"></a>安装「oh my zsh」可以自动安装也可以手动安装</h2><p><strong>推荐手动安装</strong></p>
-<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">Github地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</div><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div></pre></td></tr></table></figure></p>
-<h3 id="自动安装"><a href="#自动安装" class="headerlink" title="自动安装"></a>自动安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<h3 id="替换bash为zsh"><a href="#替换bash为zsh" class="headerlink" title="替换bash为zsh"></a>替换bash为zsh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div></pre></td></tr></table></figure>
-<h2 id="自动提示插件安装"><a href="#自动提示插件安装" class="headerlink" title="自动提示插件安装"></a>自动提示插件安装</h2><h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions</div><div class="line"></div><div class="line">#将下命令添加到你的 .zshrc:</div><div class="line">source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh</div></pre></td></tr></table></figure>
-<h2 id="git问题大全"><a href="#git问题大全" class="headerlink" title="git问题大全"></a>git问题大全</h2><h3 id="执行git-push错误时的解决方法"><a href="#执行git-push错误时的解决方法" class="headerlink" title="执行git push错误时的解决方法"></a>执行git push错误时的解决方法</h3><p>默认情况下在执行 <code>git push</code> 时，系统会提示error而无法成功推送。这是由于git默认拒绝了push操作，需要进行设置，修改远程仓库目录中的 .git/config 文件.</p>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p><a href="https://github.com/zsh-users/zsh-autosuggestions" target="_blank" rel="external">Github地址</a></p>
+<pre><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+</code></pre><h3 id="自动安装"><a href="#自动安装" class="headerlink" title="自动安装"></a>自动安装</h3><pre><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+</code></pre><h3 id="替换bash为zsh"><a href="#替换bash为zsh" class="headerlink" title="替换bash为zsh"></a>替换bash为zsh</h3><pre><code>chsh -s /bin/zsh
+</code></pre><h2 id="自动提示插件安装"><a href="#自动提示插件安装" class="headerlink" title="自动提示插件安装"></a>自动提示插件安装</h2><h3 id="下载插件"><a href="#下载插件" class="headerlink" title="下载插件"></a>下载插件</h3><pre><code>git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+#将下命令添加到你的 .zshrc:
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+</code></pre><h2 id="git问题大全"><a href="#git问题大全" class="headerlink" title="git问题大全"></a>git问题大全</h2><h3 id="执行git-push错误时的解决方法"><a href="#执行git-push错误时的解决方法" class="headerlink" title="执行git push错误时的解决方法"></a>执行git push错误时的解决方法</h3><p>默认情况下在执行 <code>git push</code> 时，系统会提示error而无法成功推送。这是由于git默认拒绝了push操作，需要进行设置，修改远程仓库目录中的 .git/config 文件.</p>
 <p><strong>解决方法：</strong><br>在后面添加如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[receive]</div><div class="line">       denyCurrentBranch = ignore</div><div class="line">```       </div><div class="line"></div><div class="line">### 执行git push后，服务器端无法查看到推送内容的原因及解决方法</div><div class="line">在初始化远程仓库时最好使用：`git --bare init`，而不要使用：`git init`</div><div class="line">如果使用了`git init` 初始化，则远程仓库的目录下也包含 work tree。当本地仓库向远程仓库push时，如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上，也即在远程仓库的目录下对应的文件还是之前的内容。</div><div class="line"></div><div class="line">**解决方法：**</div><div class="line">远程端必须运行命令：`git reset --hard` 才能看到 push 后的内容。</div><div class="line">### 解决因git源代码库路径发生变化，导致本地代码库无法同步的问题</div><div class="line">如果执行git clone之后，源代码库的路径发生变化，导致无法与源代码保持一致，可以修改本地代码库的.git/config文件以更新源代码路径，例如：</div><div class="line">vi .git/config</div><div class="line">内容如下：</div></pre></td></tr></table></figure>
-<p>[core]<br>        repositoryformatversion = 0<br>        filemode = true<br>        bare = false<br>        logallrefupdates = true<br>[remote “origin”]<br>        fetch = +refs/heads/<em>:refs/remotes/origin/</em><br>        url = /home/android/gitTestSource<br>[branch “master”]<br>        remote = origin<br>        merge = refs/heads/master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**解决方法：**</div><div class="line">如果现在/home/android/gitTestSource目录的文件被移动到了/home/android/project/gitTestSource目录，则可将其中的url = /home/android/gitTestSource改为：url = /home/android/project/gitTestSource。</div><div class="line"></div><div class="line">### git  Unable to create temporary file</div><div class="line">1）出现 `Unable to create temporary file: Permission denied`</div><div class="line">在Windows上使用TortoiseGit执行Push时出现以下错误</div></pre></td></tr></table></figure></p>
-<p>git.exe push –force –progress  “origin” master:master<br>Counting objects: 189, done.<br>Compressing objects: 100% (187/187)<br>Writing objects:   7% (14/189)<br>fatal: Unable to create temporary file: Permission denied<br>fatal: sha1 file ‘<stdout>‘ write error: Invalid argument<br>error: failed to push some refs to ‘git@110.73.4.46:channelv.git’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">`git did not exit cleanly (exit code 1)`</div><div class="line">原来是服务器上是用root账户建立的库目录，导致git账户无权写入，方法就是修改文件夹的所属用户和所属用户组</div></pre></td></tr></table></figure></stdout></p>
-<p>chown -R git <em><br>chgrp -R git </em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">2）出现 `failed to push some refs to &apos;git@110.731.41.46:channelv.git&apos;`</div><div class="line"></div><div class="line">在Windows上使用TortoiseGit执行Push时出现以下错误</div></pre></td></tr></table></figure></p>
-<p>git.exe push –progress  “origin” master:master<br>Counting objects: 189, done.<br>Compressing objects: 100% (158/158)<br>Writing objects: 100% (189/189), 1016.00 KiB | 997 KiB/s<br>Writing objects: 100% (189/189), 1.12 MiB | 997 KiB/s, done.<br>remote: error: ‘receive.denyCurrentBranch’ configuration variable to ‘refuse’.<br>To git@101.713.4.46:channelv.git<br>! [remote rejected] master -&gt; master (branch is currently checked out)<br>error: failed to push some refs to ‘git@10.73.4.46:channelv.git’<br>git did not exit cleanly (exit code 1)<br>```</p>
-<p>在服务器对应的库目录下执行以下命令增加配置即可</p>
+<pre><code>[receive]
+       denyCurrentBranch = ignore
+</code></pre><h3 id="执行git-push后，服务器端无法查看到推送内容的原因及解决方法"><a href="#执行git-push后，服务器端无法查看到推送内容的原因及解决方法" class="headerlink" title="执行git push后，服务器端无法查看到推送内容的原因及解决方法"></a>执行git push后，服务器端无法查看到推送内容的原因及解决方法</h3><p>在初始化远程仓库时最好使用：<code>git --bare init</code>，而不要使用：<code>git init</code><br>如果使用了<code>git init</code> 初始化，则远程仓库的目录下也包含 work tree。当本地仓库向远程仓库push时，如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上，也即在远程仓库的目录下对应的文件还是之前的内容。</p>
+<p><strong>解决方法：</strong><br>远程端必须运行命令：<code>git reset --hard</code> 才能看到 push 后的内容。</p>
+<h3 id="解决因git源代码库路径发生变化，导致本地代码库无法同步的问题"><a href="#解决因git源代码库路径发生变化，导致本地代码库无法同步的问题" class="headerlink" title="解决因git源代码库路径发生变化，导致本地代码库无法同步的问题"></a>解决因git源代码库路径发生变化，导致本地代码库无法同步的问题</h3><p>如果执行git clone之后，源代码库的路径发生变化，导致无法与源代码保持一致，可以修改本地代码库的.git/config文件以更新源代码路径，例如：<br>vi .git/config<br>内容如下：</p>
+<pre><code>[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote &quot;origin&quot;]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = /home/android/gitTestSource
+[branch &quot;master&quot;]
+        remote = origin
+        merge = refs/heads/master
+</code></pre><p><strong>解决方法：</strong><br>如果现在/home/android/gitTestSource目录的文件被移动到了/home/android/project/gitTestSource目录，则可将其中的url = /home/android/gitTestSource改为：url = /home/android/project/gitTestSource。</p>
+<h3 id="git-Unable-to-create-temporary-file"><a href="#git-Unable-to-create-temporary-file" class="headerlink" title="git  Unable to create temporary file"></a>git  Unable to create temporary file</h3><p>1）出现 <code>Unable to create temporary file: Permission denied</code><br>在Windows上使用TortoiseGit执行Push时出现以下错误</p>
+<pre><code>git.exe push --force --progress  &quot;origin&quot; master:master
+Counting objects: 189, done.
+Compressing objects: 100% (187/187)
+Writing objects:   7% (14/189)
+fatal: Unable to create temporary file: Permission denied
+fatal: sha1 file &#39;&lt;stdout&gt;&#39; write error: Invalid argument
+error: failed to push some refs to &#39;git@110.73.4.46:channelv.git&#39;
+</code></pre><p><code>git did not exit cleanly (exit code 1)</code><br>原来是服务器上是用root账户建立的库目录，导致git账户无权写入，方法就是修改文件夹的所属用户和所属用户组</p>
+<pre><code>chown -R git *
+chgrp -R git *
+</code></pre><p>2）出现 <code>failed to push some refs to &#39;git@110.731.41.46:channelv.git&#39;</code></p>
+<p>在Windows上使用TortoiseGit执行Push时出现以下错误</p>
+<pre><code>git.exe push --progress  &quot;origin&quot; master:master
+Counting objects: 189, done.
+Compressing objects: 100% (158/158)
+Writing objects: 100% (189/189), 1016.00 KiB | 997 KiB/s
+Writing objects: 100% (189/189), 1.12 MiB | 997 KiB/s, done.
+remote: error: &#39;receive.denyCurrentBranch&#39; configuration variable to &#39;refuse&#39;.
+To git@101.713.4.46:channelv.git
+! [remote rejected] master -&gt; master (branch is currently checked out)
+error: failed to push some refs to &#39;git@10.73.4.46:channelv.git&#39;
+git did not exit cleanly (exit code 1)
+</code></pre><p>在服务器对应的库目录下执行以下命令增加配置即可</p>
 <p><code>git config --bool core.bare true</code></p>
 
       
@@ -649,7 +740,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -660,7 +751,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -737,7 +828,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-安装"><span class="nav-number">1.</span> <span class="nav-text">Laravel 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-基本工作流程"><span class="nav-number">2.</span> <span class="nav-text">Laravel 基本工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel向视图传递变量"><span class="nav-number">3.</span> <span class="nav-text">Laravel向视图传递变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单个变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">单个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个变量"><span class="nav-number">3.0.2.</span> <span class="nav-text">多个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个或单个变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">多个或单个变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-Blade-模板简介"><span class="nav-number">4.</span> <span class="nav-text">Laravel Blade 模板简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在模版中使用条件-循环"><span class="nav-number">4.1.</span> <span class="nav-text">在模版中使用条件 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件判断"><span class="nav-number">4.1.1.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">4.1.2.</span> <span class="nav-text">循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel环境配置-env"><span class="nav-number">5.</span> <span class="nav-text">Laravel环境配置.env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美化phpstorm"><span class="nav-number">6.</span> <span class="nav-text">美化phpstorm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac终端美化："><span class="nav-number">7.</span> <span class="nav-text">mac终端美化：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装「oh-my-zsh」可以自动安装也可以手动安装"><span class="nav-number">7.1.</span> <span class="nav-text">安装「oh my zsh」可以自动安装也可以手动安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">7.1.1.</span> <span class="nav-text">手动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动安装"><span class="nav-number">7.1.2.</span> <span class="nav-text">自动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换bash为zsh"><span class="nav-number">7.1.3.</span> <span class="nav-text">替换bash为zsh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动提示插件安装"><span class="nav-number">7.2.</span> <span class="nav-text">自动提示插件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载插件"><span class="nav-number">7.2.1.</span> <span class="nav-text">下载插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git问题大全"><span class="nav-number">7.3.</span> <span class="nav-text">git问题大全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行git-push错误时的解决方法"><span class="nav-number">7.3.1.</span> <span class="nav-text">执行git push错误时的解决方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-安装"><span class="nav-number">1.</span> <span class="nav-text">Laravel 安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-基本工作流程"><span class="nav-number">2.</span> <span class="nav-text">Laravel 基本工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel向视图传递变量"><span class="nav-number">3.</span> <span class="nav-text">Laravel向视图传递变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单个变量"><span class="nav-number">3.0.1.</span> <span class="nav-text">单个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个变量"><span class="nav-number">3.0.2.</span> <span class="nav-text">多个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个或单个变量"><span class="nav-number">3.0.3.</span> <span class="nav-text">多个或单个变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel-Blade-模板简介"><span class="nav-number">4.</span> <span class="nav-text">Laravel Blade 模板简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在模版中使用条件-循环"><span class="nav-number">4.1.</span> <span class="nav-text">在模版中使用条件 循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#条件判断"><span class="nav-number">4.1.1.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">4.1.2.</span> <span class="nav-text">循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laravel环境配置-env"><span class="nav-number">5.</span> <span class="nav-text">Laravel环境配置.env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美化phpstorm"><span class="nav-number">6.</span> <span class="nav-text">美化phpstorm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac终端美化："><span class="nav-number">7.</span> <span class="nav-text">mac终端美化：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装「oh-my-zsh」可以自动安装也可以手动安装"><span class="nav-number">7.1.</span> <span class="nav-text">安装「oh my zsh」可以自动安装也可以手动安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">7.1.1.</span> <span class="nav-text">手动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动安装"><span class="nav-number">7.1.2.</span> <span class="nav-text">自动安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换bash为zsh"><span class="nav-number">7.1.3.</span> <span class="nav-text">替换bash为zsh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动提示插件安装"><span class="nav-number">7.2.</span> <span class="nav-text">自动提示插件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载插件"><span class="nav-number">7.2.1.</span> <span class="nav-text">下载插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git问题大全"><span class="nav-number">7.3.</span> <span class="nav-text">git问题大全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行git-push错误时的解决方法"><span class="nav-number">7.3.1.</span> <span class="nav-text">执行git push错误时的解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行git-push后，服务器端无法查看到推送内容的原因及解决方法"><span class="nav-number">7.3.2.</span> <span class="nav-text">执行git push后，服务器端无法查看到推送内容的原因及解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决因git源代码库路径发生变化，导致本地代码库无法同步的问题"><span class="nav-number">7.3.3.</span> <span class="nav-text">解决因git源代码库路径发生变化，导致本地代码库无法同步的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-Unable-to-create-temporary-file"><span class="nav-number">7.3.4.</span> <span class="nav-text">git  Unable to create temporary file</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

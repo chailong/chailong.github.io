@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.gif">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.png">
-<meta property="og:updated_time" content="2017-09-24T21:07:51.000Z">
+<meta property="og:updated_time" content="2017-09-25T09:48:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序法之最快方法">
 <meta name="twitter:description" content="按照惯例我感觉我还的介绍下冒泡排序(这里介绍来子网络)。冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一  种简单的排序算法。它重复地走访过要排序的数列，依次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
@@ -446,7 +446,29 @@
       
         <p>按照惯例我感觉我还的介绍下冒泡排序(这里介绍来子网络)。<br>冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一  种简单的排序算法。它重复地走访过要排序的数列，依次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。<br><img src="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.gif" alt=""><br><a id="more"></a></p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。针对所有的元素重复以上的步骤，除了最后一个。持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<h2 id="呆萌–demo："><a href="#呆萌–demo：" class="headerlink" title="呆萌–demo："></a>呆萌–demo：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">$arrs = array(1,43,2,3,4,5,6);   // 6+5+4+3+2+1  循环次数=(数组总数-1)的累加和</div><div class="line">function BubbleSort ($arr)</div><div class="line">&#123;</div><div class="line">	$two = 0;</div><div class="line">	$len = count($arr);</div><div class="line">	//该层循环控制 需要冒泡的轮数</div><div class="line">	for ($i=1; $i&lt;$len; $i++) &#123;</div><div class="line">		//该层循环用来控制每轮 冒出一个数 需要比较的次数</div><div class="line">		for ($k=0; $k&lt;$len-$i; $k++) &#123;</div><div class="line">			$two++;</div><div class="line">			if($arr[$k] &gt; $arr[$k+1]) &#123;</div><div class="line">				$tmp = $arr[$k+1]; //声明一个临时变量暂时存放</div><div class="line">				$arr[$k+1] = $arr[$k];</div><div class="line">				$arr[$k] = $tmp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	echo $two.&apos;==two&lt;br&gt;&apos;;</div><div class="line">	return $arr;</div><div class="line">&#125;</div><div class="line">var_dump(BubbleSort($arrs));</div></pre></td></tr></table></figure>
+<h2 id="呆萌–demo："><a href="#呆萌–demo：" class="headerlink" title="呆萌–demo："></a>呆萌–demo：</h2><pre><code class="php">$arrs = array(1,43,2,3,4,5,6);   // 6+5+4+3+2+1  循环次数=(数组总数-1)的累加和
+function BubbleSort ($arr)
+{
+    $two = 0;
+    $len = count($arr);
+    //该层循环控制 需要冒泡的轮数
+    for ($i=1; $i&lt;$len; $i++) {
+        //该层循环用来控制每轮 冒出一个数 需要比较的次数
+        for ($k=0; $k&lt;$len-$i; $k++) {
+            $two++;
+            if ($arr[$k] &gt; $arr[$k+1]) {
+                $tmp = $arr[$k+1]; //声明一个临时变量暂时存放
+                $arr[$k+1] = $arr[$k];
+                $arr[$k] = $tmp;
+            }
+        }
+    }
+    echo $two.&#39;==two&lt;br&gt;&#39;;
+    return $arr;
+}
+
+var_dump(BubbleSort($arrs));
+</code></pre>
 <h2 id="测试欢迎投稿"><a href="#测试欢迎投稿" class="headerlink" title="测试欢迎投稿"></a>测试欢迎投稿</h2><p>下面是笔者做的一个测试的一个循环次数，如果你有比笔者更快方法请发送到 <a href="http://www.llaravel.com" target="_blank" rel="external">http://www.llaravel.com</a> 进行留言<br><img src="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.png" alt=""></p>
 
       
@@ -598,7 +620,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -609,7 +631,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

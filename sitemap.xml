@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chailong.github.io/2017/09/25/gitComd/</loc>
+    
+    <lastmod>2017-09-25T12:36:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chailong.github.io/2016/10/28/gitToWebPage/</loc>
+    
+    <lastmod>2017-09-25T12:29:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
+    
+    <lastmod>2017-09-25T10:38:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chailong.github.io/2016/10/06/stort1/</loc>
+    
+    <lastmod>2017-09-25T09:48:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chailong.github.io/about/index.html</loc>
     
     <lastmod>2017-09-24T21:10:52.000Z</lastmod>
@@ -23,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://chailong.github.io/2016/10/06/stort1/</loc>
-    
-    <lastmod>2017-09-24T21:07:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://chailong.github.io/2016/10/16/phpArrayINArr/</loc>
     
     <lastmod>2017-09-24T21:07:43.000Z</lastmod>
@@ -40,13 +61,6 @@
     <loc>http://chailong.github.io/2016/08/22/phplore/</loc>
     
     <lastmod>2017-09-24T21:07:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chailong.github.io/2016/10/28/gitToWebPage/</loc>
-    
-    <lastmod>2017-09-24T21:07:02.000Z</lastmod>
     
   </url>
   
@@ -96,13 +110,6 @@
     <loc>http://chailong.github.io/2016/08/13/hexoInstall/</loc>
     
     <lastmod>2017-09-24T21:02:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
-    
-    <lastmod>2017-09-24T21:02:02.000Z</lastmod>
     
   </url>
   
