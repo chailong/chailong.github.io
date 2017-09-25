@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,12 +84,10 @@
 
 
 
-  <link rel="alternate" href="/atom.xm" title="韩月" type="application/atom+xml" />
+  <link rel="alternate" href="/rss2" title="韩月" type="application/atom+xml" />
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -100,11 +98,11 @@
 <meta name="keywords" content="数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP 数组合并方法">
-<meta property="og:url" content="https://chailong.github.io/2016/10/16/phpArrayINArr/index.html">
+<meta property="og:url" content="http://chailong.github.io/2016/10/16/phpArrayINArr/index.html">
 <meta property="og:site_name" content="韩月">
 <meta property="og:description" content="+运算符介绍 当两个数组的键名是索引数组或关联数组可以直接 「+」，$c = $a + $b ，在 $a 后追加键名和值($b在$a中不存在的键名)。 读我快速理解特点：不覆盖，只是追加不存在的键名和对应的值。键名不重新索引无论是全部索引数字还是混合，都只是追加键名和值，如果键名相同则不进行追加，即把最先出现的值作为最终结果返回。  array_merge函数介绍array_merge() 将一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-12T15:35:06.000Z">
+<meta property="og:updated_time" content="2017-09-24T21:07:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 数组合并方法">
 <meta name="twitter:description" content="+运算符介绍 当两个数组的键名是索引数组或关联数组可以直接 「+」，$c = $a + $b ，在 $a 后追加键名和值($b在$a中不存在的键名)。 读我快速理解特点：不覆盖，只是追加不存在的键名和对应的值。键名不重新索引无论是全部索引数字还是混合，都只是追加键名和值，如果键名相同则不进行追加，即把最先出现的值作为最终结果返回。  array_merge函数介绍array_merge() 将一个">
@@ -115,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -136,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://chailong.github.io/2016/10/16/phpArrayINArr/"/>
+  <link rel="canonical" href="http://chailong.github.io/2016/10/16/phpArrayINArr/"/>
 
 
 
@@ -262,16 +260,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-rss">
-          <a href="/rss" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            menu.rss
-          </a>
-        </li>
-      
 
       
         <li class="menu-item menu-item-search">
@@ -339,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chailong.github.io/2016/10/16/phpArrayINArr/">
+    <link itemprop="mainEntityOfPage" href="http://chailong.github.io/2016/10/16/phpArrayINArr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩月">
@@ -378,6 +366,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php奇淫技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">php奇淫技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -596,13 +606,22 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -612,7 +631,7 @@
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xm" rel="alternate">
+            <a href="/rss2" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
             </a>
@@ -783,6 +802,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>

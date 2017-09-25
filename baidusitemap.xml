@@ -3,134 +3,10 @@
 
 
     
-  <url>
-    <loc>https://chailong.github.io/2017/06/24/toolIDE/</loc>
-    <lastmod>2017-09-23T18:17:34.000Z</lastmod>
-    <data>
-        <display>
-        <title>MAC开发工具大杂烩</title>
-        <pubTime>2017-06-23T17:51:58.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
-    <loc>https://chailong.github.io/2016/10/06/stort1/</loc>
-    <lastmod>2017-09-15T16:03:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>排序法之最快方法</title>
-        <pubTime>2016-10-05T16:59:21.000Z</pubTime>
-        
-        <tag>-- 排序</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/10/28/gitToWebPage/</loc>
-    <lastmod>2017-09-15T15:59:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>git推送到服务器自动同步到站点目录</title>
-        <pubTime>2016-10-27T16:52:35.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/08/22/phplore/</loc>
-    <lastmod>2017-09-15T15:58:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>php必须掌握的基础知识</title>
-        <pubTime>2016-08-21T17:33:51.000Z</pubTime>
-        
-        <tag>-PHP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/09/18/laravelMoHuSelect/</loc>
-    <lastmod>2017-09-15T15:58:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>laravel最优雅的模糊查询</title>
-        <pubTime>2016-09-18T00:27:48.000Z</pubTime>
-        
-        <tag>laravel</tag>
-         
-        <tag>select</tag>
-         
-        <tag>DB</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/09/22/linuxDir/</loc>
-    <lastmod>2017-09-12T16:46:52.000Z</lastmod>
-    <data>
-        <display>
-        <title>LINUX 目录结构</title>
-        <pubTime>2016-09-21T17:35:04.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/09/18/linuxComdLine/</loc>
-    <lastmod>2017-09-12T16:46:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>LINUX中常用操作命令</title>
-        <pubTime>2016-09-17T17:36:10.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>常用操作命令</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/09/14/MacOpenError/</loc>
-    <lastmod>2017-09-12T16:46:27.000Z</lastmod>
+    <loc>http://chailong.github.io/2016/09/14/MacOpenError/</loc>
+    <lastmod>2017-09-24T21:08:48.000Z</lastmod>
     <data>
         <display>
         <title>macOS Sierra 如何打开任何来源</title>
@@ -144,14 +20,229 @@
          
          
            
+             
+              <breadCrumb title="MAC-DIY" url="http://chailong.github.io/categories/MAC-DIY/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://chailong.github.io/2016/09/09/laravelStart/</loc>
-    <lastmod>2017-09-12T16:46:08.000Z</lastmod>
+    <loc>http://chailong.github.io/2016/09/18/linuxComdLine/</loc>
+    <lastmod>2017-09-24T21:08:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>LINUX中常用操作命令</title>
+        <pubTime>2016-09-17T17:36:10.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>常用操作命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://chailong.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/10/06/stort1/</loc>
+    <lastmod>2017-09-24T21:07:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>排序法之最快方法</title>
+        <pubTime>2016-10-05T16:59:21.000Z</pubTime>
+        
+        <tag>-- 排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="php奇淫技巧" url="http://chailong.github.io/categories/php%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/10/16/phpArrayINArr/</loc>
+    <lastmod>2017-09-24T21:07:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>PHP 数组合并方法</title>
+        <pubTime>2016-10-15T16:59:21.000Z</pubTime>
+        
+        <tag>数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="php奇淫技巧" url="http://chailong.github.io/categories/php%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/08/22/phplore/</loc>
+    <lastmod>2017-09-24T21:07:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>php必须掌握的基础知识</title>
+        <pubTime>2016-08-21T17:33:51.000Z</pubTime>
+        
+        <tag>-PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="php奇淫技巧" url="http://chailong.github.io/categories/php%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/10/28/gitToWebPage/</loc>
+    <lastmod>2017-09-24T21:07:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>git推送到服务器自动同步到站点目录</title>
+        <pubTime>2016-10-27T16:52:35.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="GIT" url="http://chailong.github.io/categories/GIT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/10/03/mysqlJOIN/</loc>
+    <lastmod>2017-09-24T21:06:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mysql的左链接和右链接区别</title>
+        <pubTime>2016-10-02T18:35:44.000Z</pubTime>
+        
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://chailong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/09/22/linuxDir/</loc>
+    <lastmod>2017-09-24T21:06:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>LINUX 目录结构</title>
+        <pubTime>2016-09-21T17:35:04.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://chailong.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/09/21/lnmpInstall/</loc>
+    <lastmod>2017-09-24T21:05:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux LNMP服务器搭建教程</title>
+        <pubTime>2016-09-20T17:30:14.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>LNMP</tag>
+         
+         
+           
+             
+              <breadCrumb title="服务器" url="http://chailong.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/09/18/laravelMoHuSelect/</loc>
+    <lastmod>2017-09-24T21:05:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>laravel最优雅的模糊查询</title>
+        <pubTime>2016-09-18T00:27:48.000Z</pubTime>
+        
+        <tag>laravel</tag>
+         
+        <tag>select</tag>
+         
+        <tag>DB</tag>
+         
+         
+           
+             
+              <breadCrumb title="Laravel奇淫技巧" url="http://chailong.github.io/categories/Laravel%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/09/08/laravelExecl/</loc>
+    <lastmod>2017-09-24T21:05:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>Laravel中的Excel</title>
+        <pubTime>2016-09-07T17:57:23.000Z</pubTime>
+        
+        <tag>Laravel</tag>
+         
+        <tag>Excel</tag>
+         
+         
+           
+             
+              <breadCrumb title="Laravel奇淫技巧" url="http://chailong.github.io/categories/Laravel%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2016/09/09/laravelStart/</loc>
+    <lastmod>2017-09-24T21:04:57.000Z</lastmod>
     <data>
         <display>
         <title>Laravel 从零开始</title>
@@ -167,89 +258,17 @@
          
          
            
+             
+              <breadCrumb title="Laravel奇淫技巧" url="http://chailong.github.io/categories/Laravel%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
         </display>
     </data>
     </url>
 
     
   <url>
-    <loc>https://chailong.github.io/2016/09/08/laravelExecl/</loc>
-    <lastmod>2017-09-12T16:45:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>Laravel中的Excel</title>
-        <pubTime>2016-09-07T17:57:23.000Z</pubTime>
-        
-        <tag>Laravel</tag>
-         
-        <tag>Excel</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/10/03/mysqlJOIN/</loc>
-    <lastmod>2017-09-12T16:45:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mysql的左链接和右链接区别</title>
-        <pubTime>2016-10-02T18:35:44.000Z</pubTime>
-        
-        <tag>mysql</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
-  <url>
-    <loc>https://chailong.github.io/2016/10/16/phpArrayINArr/</loc>
-    <lastmod>2017-09-12T15:35:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>PHP 数组合并方法</title>
-        <pubTime>2016-10-15T16:59:21.000Z</pubTime>
-        
-        <tag>数组</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/09/21/lnmpInstall/</loc>
-    <lastmod>2017-09-12T15:29:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linux LNMP服务器搭建教程</title>
-        <pubTime>2016-09-20T17:30:14.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>LNMP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://chailong.github.io/2016/08/13/hexoInstall/</loc>
-    <lastmod>2017-09-12T15:19:14.000Z</lastmod>
+    <loc>http://chailong.github.io/2016/08/13/hexoInstall/</loc>
+    <lastmod>2017-09-24T21:02:23.000Z</lastmod>
     <data>
         <display>
         <title>hexo折腾日记</title>
@@ -261,4 +280,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
+    <lastmod>2017-09-24T21:02:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>MAC开发工具大杂烩</title>
+        <pubTime>2017-06-23T17:51:58.000Z</pubTime>
+        
+        <tag>MAC</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chailong.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
 </urlset>

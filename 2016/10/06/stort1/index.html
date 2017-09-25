@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,12 +84,10 @@
 
 
 
-  <link rel="alternate" href="/atom.xm" title="韩月" type="application/atom+xml" />
+  <link rel="alternate" href="/rss2" title="韩月" type="application/atom+xml" />
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -100,13 +98,13 @@
 <meta name="keywords" content="-- 排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序法之最快方法">
-<meta property="og:url" content="https://chailong.github.io/2016/10/06/stort1/index.html">
+<meta property="og:url" content="http://chailong.github.io/2016/10/06/stort1/index.html">
 <meta property="og:site_name" content="韩月">
 <meta property="og:description" content="按照惯例我感觉我还的介绍下冒泡排序(这里介绍来子网络)。冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一  种简单的排序算法。它重复地走访过要排序的数列，依次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.gif">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com//sort/BubbleSort.png">
-<meta property="og:updated_time" content="2017-09-15T16:03:44.000Z">
+<meta property="og:updated_time" content="2017-09-24T21:07:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序法之最快方法">
 <meta name="twitter:description" content="按照惯例我感觉我还的介绍下冒泡排序(这里介绍来子网络)。冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一  种简单的排序算法。它重复地走访过要排序的数列，依次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。">
@@ -118,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -139,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="https://chailong.github.io/2016/10/06/stort1/"/>
+  <link rel="canonical" href="http://chailong.github.io/2016/10/06/stort1/"/>
 
 
 
@@ -265,16 +263,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-rss">
-          <a href="/rss" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            menu.rss
-          </a>
-        </li>
-      
 
       
         <li class="menu-item menu-item-search">
@@ -342,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chailong.github.io/2016/10/06/stort1/">
+    <link itemprop="mainEntityOfPage" href="http://chailong.github.io/2016/10/06/stort1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩月">
@@ -381,6 +369,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php奇淫技巧/" itemprop="url" rel="index">
+                    <span itemprop="name">php奇淫技巧</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -593,13 +603,22 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -609,7 +628,7 @@
 
         
           <div class="feed-link motion-element">
-            <a href="/atom.xm" rel="alternate">
+            <a href="/rss2" rel="alternate">
               <i class="fa fa-rss"></i>
               RSS
             </a>
@@ -780,6 +799,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
