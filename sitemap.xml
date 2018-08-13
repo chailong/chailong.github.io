@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
+    
+    <lastmod>2017-10-08T12:02:11.010Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chailong.github.io/2017/06/24/new/</loc>
+    
+    <lastmod>2017-10-08T12:02:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chailong.github.io/2017/09/25/gitComd/</loc>
     
     <lastmod>2017-09-25T12:36:26.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://chailong.github.io/2016/10/28/gitToWebPage/</loc>
     
     <lastmod>2017-09-25T12:29:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
-    
-    <lastmod>2017-09-25T10:38:02.000Z</lastmod>
     
   </url>
   

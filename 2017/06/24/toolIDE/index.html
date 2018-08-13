@@ -84,7 +84,7 @@
 
 
 
-  <link rel="alternate" href="/rss2" title="韩月" type="application/atom+xml" />
+  <link rel="alternate" href="/rss2" title="柴龙" type="application/atom+xml" />
 
 
 
@@ -101,7 +101,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MAC开发工具大杂烩">
 <meta property="og:url" content="http://chailong.github.io/2017/06/24/toolIDE/index.html">
-<meta property="og:site_name" content="韩月">
+<meta property="og:site_name" content="柴龙">
 <meta property="og:description" content="开发必备部分软件安装配置教程 文件打开提示放入垃圾桶打开终端键入：sudo spctl --master-disable 输入密码即可">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15046381900701.jpg">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047436875078.jpg">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047153533249.jpg">
 <meta property="og:image" content="http://opxoapzhs.bkt.clouddn.com/15046316197660/15047156552449.jpg">
-<meta property="og:updated_time" content="2017-09-25T10:38:02.000Z">
+<meta property="og:updated_time" content="2017-10-08T12:02:11.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC开发工具大杂烩">
 <meta name="twitter:description" content="开发必备部分软件安装配置教程 文件打开提示放入垃圾桶打开终端键入：sudo spctl --master-disable 输入密码即可">
@@ -159,7 +159,7 @@
 
 
 
-  <title>MAC开发工具大杂烩 | 韩月</title>
+  <title>MAC开发工具大杂烩 | 柴龙</title>
   
 
 
@@ -205,7 +205,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">韩月</span>
+        <span class="site-title">柴龙</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -355,7 +355,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="韩月">
+      <meta itemprop="name" content="柴龙">
     </span>
 
     
@@ -459,8 +459,10 @@
 
       
         <p>开发必备部分软件安装配置教程</p>
-<p>文件打开提示放入垃圾桶打开终端键入：<code>sudo spctl --master-disable</code> 输入密码即可<br><a id="more"></a><br>本人命令放在 <code>~/bin</code> 中 在 .zshrc 中 引入 <code>export PATH=&#39;/Users/baby/bin&#39;:$PATH</code> </p>
-<p><br></p>
+<p>文件打开提示放入垃圾桶打开终端键入：<code>sudo spctl --master-disable</code> 输入密码即可<br><a id="more"></a><br>本人命令放在 <code>~/bin</code> 中<br>在编辑 <code>~/.zshrc</code> 添加目录文件 <code>source ~/bin/.zshrc</code> 在 <code>~/bin/.zshrc</code> 中写入</p>
+<pre><code>export PATH=&#39;/Users/baby/bin&#39;:$PATH
+source ~/bin/.zshrc
+</code></pre><p><br></p>
 <h1 id="brew"><a href="#brew" class="headerlink" title="brew"></a><center>brew</center></h1><h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><p><strong>安装前需要下载Xcode</strong><br>官网自行安装：<a href="https://brew.sh" target="_blank" rel="external">https://brew.sh</a></p>
 <h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><pre><code class="php"> brew install tig   #高亮美化
 
@@ -470,8 +472,10 @@
  brew install tree  #树形目录
 </code></pre>
 <h2 id="切换PHP版本"><a href="#切换PHP版本" class="headerlink" title="切换PHP版本"></a>切换PHP版本</h2><p>一、使用brew安装php多版本方法</p>
-<pre><code>brew install php56
+<pre><code>brew install php56 
 brew install php70
+
+brew install homebrew/php/php70
 </code></pre><p>二、安装切换工具</p>
 <pre><code>brew install php-version
 source $(brew --prefix php-version)/php-version.sh
@@ -740,8 +744,8 @@ browser-sync start --proxy &quot;主机名&quot; &quot;css/*.css&quot;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/25/gitComd/" rel="prev" title="Git命令大全">
-                Git命令大全 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/24/new/" rel="prev" title="MAC开发工具大杂烩">
+                MAC开发工具大杂烩 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -821,7 +825,7 @@ browser-sync start --proxy &quot;主机名&quot; &quot;css/*.css&quot;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -932,7 +936,7 @@ browser-sync start --proxy &quot;主机名&quot; &quot;css/*.css&quot;
         <div class="copyright" >
   
   &copy;  2013 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

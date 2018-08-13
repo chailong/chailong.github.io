@@ -84,7 +84,7 @@
 
 
 
-  <link rel="alternate" href="/rss2" title="韩月" type="application/atom+xml" />
+  <link rel="alternate" href="/rss2" title="柴龙" type="application/atom+xml" />
 
 
 
@@ -98,13 +98,13 @@
 
 <meta name="description" content="此格威权不可当   紫袍金带坐高堂   荣华富贵谁能及   积玉堆金满储仓">
 <meta property="og:type" content="website">
-<meta property="og:title" content="韩月">
-<meta property="og:url" content="http://chailong.github.io/tags/laravel/index.html">
-<meta property="og:site_name" content="韩月">
+<meta property="og:title" content="柴龙">
+<meta property="og:url" content="http://chailong.github.io/tags/Laravel/index.html">
+<meta property="og:site_name" content="柴龙">
 <meta property="og:description" content="此格威权不可当   紫袍金带坐高堂   荣华富贵谁能及   积玉堆金满储仓">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="韩月">
+<meta name="twitter:title" content="柴龙">
 <meta name="twitter:description" content="此格威权不可当   紫袍金带坐高堂   荣华富贵谁能及   积玉堆金满储仓">
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chailong.github.io/tags/laravel/"/>
+  <link rel="canonical" href="http://chailong.github.io/tags/Laravel/"/>
 
 
 
 
 
-  <title>标签: laravel | 韩月</title>
+  <title>标签: Laravel | 柴龙</title>
   
 
 
@@ -186,7 +186,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">韩月</span>
+        <span class="site-title">柴龙</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -320,7 +320,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>laravel<small>标签</small>
+        <h1>Laravel<small>标签</small>
         </h1>
       </div>
 
@@ -332,9 +332,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2016/09/18/laravelMoHuSelect/" itemprop="url">
+            <a class="post-title-link" href="/2016/09/09/laravelStart/" itemprop="url">
               
-                <span itemprop="name">laravel最优雅的模糊查询</span>
+                <span itemprop="name">Laravel 从零开始</span>
               
             </a>
         
@@ -342,9 +342,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-18T08:27:48+08:00"
-              content="2016-09-18" >
-          09-18
+              datetime="2016-09-09T01:15:39+08:00"
+              content="2016-09-09" >
+          09-09
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2016/09/08/laravelExecl/" itemprop="url">
+              
+                <span itemprop="name">Laravel中的Excel</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-08T01:57:23+08:00"
+              content="2016-09-08" >
+          09-08
         </time>
       </div>
 
@@ -404,7 +432,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -499,7 +527,7 @@
         <div class="copyright" >
   
   &copy;  2013 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1058,44 +1086,6 @@
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
-s-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');

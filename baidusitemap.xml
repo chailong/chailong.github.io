@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
+    <lastmod>2017-10-08T12:02:11.010Z</lastmod>
+    <data>
+        <display>
+        <title>MAC开发工具大杂烩</title>
+        <pubTime>2017-06-23T17:51:58.000Z</pubTime>
+        
+        <tag>MAC</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chailong.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chailong.github.io/2017/06/24/new/</loc>
+    <lastmod>2017-10-08T12:02:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>MAC开发工具大杂烩</title>
+        <pubTime>2017-06-23T17:51:58.000Z</pubTime>
+        
+        <tag>MAC</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://chailong.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chailong.github.io/2017/09/25/gitComd/</loc>
     <lastmod>2017-09-25T12:36:26.000Z</lastmod>
     <data>
@@ -39,26 +79,6 @@
            
              
               <breadCrumb title="GIT" url="http://chailong.github.io/categories/GIT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
-    <lastmod>2017-09-25T10:38:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>MAC开发工具大杂烩</title>
-        <pubTime>2017-06-23T17:51:58.000Z</pubTime>
-        
-        <tag>MAC</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://chailong.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
