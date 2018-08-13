@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://chailong.github.io/2016/10/06/stort1/</loc>
+    <lastmod>2018-08-13T06:51:48.333Z</lastmod>
+    <data>
+        <display>
+        <title>排序法之最快方法</title>
+        <pubTime>2016-10-05T16:59:21.000Z</pubTime>
+        
+        <tag>-- 排序</tag>
+         
+         
+           
+             
+              <breadCrumb title="php奇淫技巧" url="http://chailong.github.io/categories/php%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chailong.github.io/2017/06/24/toolIDE/</loc>
     <lastmod>2017-10-08T12:02:11.010Z</lastmod>
     <data>
@@ -79,26 +99,6 @@
            
              
               <breadCrumb title="GIT" url="http://chailong.github.io/categories/GIT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chailong.github.io/2016/10/06/stort1/</loc>
-    <lastmod>2017-09-25T09:48:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>排序法之最快方法</title>
-        <pubTime>2016-10-05T16:59:21.000Z</pubTime>
-        
-        <tag>-- 排序</tag>
-         
-         
-           
-             
-              <breadCrumb title="php奇淫技巧" url="http://chailong.github.io/categories/php%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7/"/>
           
         </display>
     </data>
